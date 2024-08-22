@@ -104,3 +104,11 @@ export const getTotalizerByTour = async (req: Request, res: Response) => {
 
   return res.status(200).json({ tourID, reviewsTotalizer });
 };
+
+export const getTotalByUser = async (req: Request, res: Response) => {
+  const userID = req.params.userID;
+
+  const reviewsTotalizer = await Review.countDocuments({ user: userID });
+
+  return res.status(200).json({ userID, reviewsTotalizer });
+};
