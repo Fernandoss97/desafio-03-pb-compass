@@ -3,12 +3,12 @@ import { DestinationType } from "../types/types";
 
 const destinationSchema = new Schema<DestinationType>(
   {
-    country: {
+    city: {
       type: String,
       required: true,
     },
-    cities: {
-      type: [String],
+    country: {
+      type: String,
       required: true,
     },
     imageURL: {

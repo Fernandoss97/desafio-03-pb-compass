@@ -36,7 +36,11 @@ const tourSchema = new Schema<TourType>(
       type: String,
       required: true,
     },
-    date: {
+    initialDate: {
+      type: String,
+      required: true,
+    },
+    finalDate: {
       type: String,
       required: true,
     },
