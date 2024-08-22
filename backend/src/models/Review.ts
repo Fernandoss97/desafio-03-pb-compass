@@ -8,6 +8,11 @@ const reviewSchema = new Schema<ReviewType>(
       ref: "User",
       required: true,
     },
+    tour: {
+      type: Schema.Types.ObjectId,
+      ref: "Tour",
+      required: true,
+    },
     services: {
       type: Number,
       required: true,

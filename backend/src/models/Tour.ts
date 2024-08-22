@@ -28,11 +28,6 @@ const tourSchema = new Schema<TourType>(
       ref: "Type",
       required: true,
     },
-    reviews: {
-      type: [Schema.Types.ObjectId],
-      ref: "Review",
-      required: true,
-    },
     overview: {
       type: String,
       required: true,

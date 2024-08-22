@@ -14,6 +14,7 @@ export interface DestinationType extends Document {
 
 export interface ReviewType extends Document {
   user: Schema.Types.ObjectId;
+  tour: Schema.Types.ObjectId;
   services: number;
   prices: number;
   locations: number;
