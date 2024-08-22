@@ -7,8 +7,8 @@ export interface BookedTourType extends Document {
 }
 
 export interface DestinationType extends Document {
+  city: string;
   country: string;
-  cities: string[];
   imageURL: string;
 }
 
@@ -34,7 +34,8 @@ export interface TourType extends Document {
   reviews: Schema.Types.ObjectId[];
   overview: string;
   imageUrl: string;
-  date: string;
+  initialDate: string;
+  finalDate: string;
   destination: Schema.Types.ObjectId;
 }
 

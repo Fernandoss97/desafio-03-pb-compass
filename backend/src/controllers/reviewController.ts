@@ -40,6 +40,7 @@ export const createReview = (req: Request, res: Response) => {
 export const getReviews = async (req: Request, res: Response) => {
   await Review.find()
     .populate("user")
+    .sort("-createdAt")
     .exec()
     .then(reviews => {
       return res.status(200).json(reviews);
