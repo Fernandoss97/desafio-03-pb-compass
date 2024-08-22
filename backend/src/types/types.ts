@@ -10,6 +10,7 @@ export interface DestinationType extends Document {
   city: string;
   country: string;
   imageURL: string;
+  travelers: number;
 }
 
 export interface ReviewType extends Document {
@@ -39,8 +40,9 @@ export interface TourType extends Document {
   destination: Schema.Types.ObjectId;
 }
 
-export interface Type extends Document {
+export interface iType extends Document {
   name: string;
+  imageURL: string;
 }
 
 export interface UserType extends Document {
