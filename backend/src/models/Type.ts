@@ -1,9 +1,13 @@
 import mongoose, { Schema } from "mongoose";
-import { Type } from "../types/types";
+import { iType } from "../types/types";
 
-const typeSchema = new Schema<Type>(
+const typeSchema = new Schema<iType>(
   {
     name: {
+      type: String,
+      required: true,
+    },
+    imageURL: {
       type: String,
       required: true,
     },
@@ -11,4 +15,4 @@ const typeSchema = new Schema<Type>(
   { timestamps: true }
 );
 
-export default mongoose.model<Type>("Type", typeSchema);
+export default mongoose.model<iType>("Type", typeSchema);

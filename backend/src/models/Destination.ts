@@ -15,6 +15,10 @@ const destinationSchema = new Schema<DestinationType>(
       type: String,
       required: true,
     },
+    travelers: {
+      type: Number,
+      required: true,
+    },
   },
   { timestamps: true }
 );

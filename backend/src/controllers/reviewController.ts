@@ -39,7 +39,7 @@ export const createReview = (req: Request, res: Response) => {
 
 export const getReviews = async (req: Request, res: Response) => {
   await Review.find()
-    .populate("user")
+    .populate("user tour")
     .sort("-createdAt")
     .exec()
     .then(reviews => {

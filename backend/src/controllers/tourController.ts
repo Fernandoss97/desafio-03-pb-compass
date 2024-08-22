@@ -48,6 +48,7 @@ export const getTours = async (req: Request, res: Response) => {
   const limit = 9;
 
   await Tour.find()
+    .populate("type destination")
     .sort("-createdAt")
     .skip((page - 1) * limit)
     .limit(limit)
@@ -63,10 +64,19 @@ export const getTourByID = async (req: Request, res: Response) => {
   const tourID = req.params.tourID;
 
   await Tour.findOne({ _id: tourID })
+    .populate("type destination")
     .then(tour => {
       return res.status(200).json(tour);
     })
     .catch(err => {
       return res.status(500).json({ msg: "Fail to get tour" });
     });
+};
+
+export const getTotalByType = async (req: Request, res: Response) => {
+  const typeID = req.params.typeID;
+
+  const typeTotalizer = await Tour.countDocuments({ type: typeID });
+
+  return res.status(200).json({ typeID, typeTotalizer });
 };

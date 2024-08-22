@@ -3,6 +3,8 @@ import db from "./config/dbConnection";
 import userRoutes from "./routes/userRoutes";
 import reviewRoutes from "./routes/reviewRoutes";
 import tourRoutes from "./routes/tourRoutes";
+import typeRoutes from "./routes/typeRoutes";
+import destinationRoutes from "./routes/destinationRoutes";
 
 const app = express();
 
@@ -15,5 +17,7 @@ app.use(express.json());
 app.use(userRoutes);
 app.use(reviewRoutes);
 app.use(tourRoutes);
+app.use(typeRoutes);
+app.use(destinationRoutes);
 
 export default app;

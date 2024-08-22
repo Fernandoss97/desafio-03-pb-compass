@@ -11,6 +11,6 @@ const router = express.Router();
 router.post("/review/create", createReview);
 router.get("/reviews", getReviews);
 router.get("/review/average/:tourID", getAverageReviewByTour);
-router.get("/review/totalizer/:tourID", getTotalizerByTour);
+router.get("/review/total-by-tour/:tourID", getTotalizerByTour);
 
 export default router;
