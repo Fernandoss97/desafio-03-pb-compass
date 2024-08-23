@@ -1,11 +1,13 @@
-import Banner from "./components/banner/Banner";
+import BannerGlobal from "./components/banner/BannerGlobal";
 import Header from "./components/header/Header";
+import BannerHome from "./components/banner/BannerHome";
 
 function App() {
   return (
     <>
       <Header />
-      <Banner />
+      <BannerGlobal title="Tour Package" />
+      {/* <BannerHome /> */}
     </>
   );
 }
