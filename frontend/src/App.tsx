@@ -1,7 +1,11 @@
+import Banner from "./components/banner/Banner";
+import Header from "./components/header/Header";
+
 function App() {
   return (
     <>
-      <h1>I gotta go see about a girl</h1>
+      <Header />
+      <Banner />
     </>
   );
 }
