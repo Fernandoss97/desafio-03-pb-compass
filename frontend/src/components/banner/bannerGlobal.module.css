@@ -1,0 +1,25 @@
+.ct_banner {
+  text-align: center;
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/desafio-03-8b2a7.appspot.com/o/banner-global.jpg?alt=media&token=5bd44aa0-8f93-4024-bb12-fb76b313380a);
+  background-size: cover;
+  background-position: center;
+}
+
+.ct_txt {
+  display: flex;
+  flex-direction: column;
+  padding-block: 90px;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-family: "Work Sans";
+  color: #ffffff;
+}
+
+.ct_txt h1 {
+  font-size: 3.125rem;
+  font-weight: 700;
+}
+
+.ct_txt p {
+  font-size: 1rem;
+  font-weight: 700;
+}
