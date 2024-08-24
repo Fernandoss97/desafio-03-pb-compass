@@ -56,7 +56,7 @@ export const getTours = async (req: Request, res: Response) => {
       return res.status(200).json(tours);
     })
     .catch(err => {
-      return res.status(500).json({ msg: "Fail to get tours" });
+      return res.status(500).json({ msg: `Fail to get tours - ${err}` });
     });
 };
 
