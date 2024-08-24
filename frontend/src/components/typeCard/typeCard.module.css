@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+
+.ct_card {
+  border: solid 1px #cfd1d4;
+  padding: 22px 16px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 150px;
+}
+
+.ct_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #fc5056;
+  border-radius: 50%;
+  width: fit-content;
+  font-size: 22px;
+  color: #ffffff;
+}
+
+.ct_type {
+  font-family: "Work Sans";
+}
+
+.ct_type p {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.ct_type span,
+.ct_price p {
+  color: #878c95;
+}
+
+.ct_price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ct_price p {
+  font-family: "Work Sans";
+}
+
+.ct_price span {
+  font-family: "Kaushan Script";
+  font-size: 20px;
+  color: #fc5056;
+}
