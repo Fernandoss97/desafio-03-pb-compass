@@ -8,6 +8,7 @@ import DestCard from "./components/destCard/DestCard";
 import AverageReviews from "./components/averageReviews/AverageReviews";
 import ProgressBar from "./components/progressBar/ProgressBar";
 import Footer from "./components/footer/Footer";
+import Subtitle from "./components/subtitle/Subtitle";
 
 function App() {
   return (
