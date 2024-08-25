@@ -1,0 +1,23 @@
+.ct {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-family: "Work Sans";
+  font-weight: 500;
+  color: #051036;
+}
+
+.wrapper {
+  max-height: 8px;
+}
+
+.barCompleted {
+  background-color: #fc5056;
+  width: 80%;
+}
+
+.ct_value {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

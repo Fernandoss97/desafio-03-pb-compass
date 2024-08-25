@@ -5,6 +5,8 @@ import SearchBar from "./components/searchBar/SearchBar";
 import TourCard from "./components/tourCard/TourCard";
 import TypeCard from "./components/typeCard/TypeCard";
 import DestCard from "./components/destCard/DestCard";
+import AverageReviews from "./components/averageReviews/AverageReviews";
+import ProgressBar from "./components/progressBar/ProgressBar";
 
 function App() {
   return (
@@ -14,13 +16,11 @@ function App() {
       <div
         style={{
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "center",
           padding: "50px",
         }}
       >
-        <DestCard />
-        <DestCard />
-        <DestCard />
+        <AverageReviews overallAverage={4} />
       </div>
     </>
   );
