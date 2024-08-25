@@ -11,7 +11,7 @@
   padding: 0.5rem 3.125rem;
   font-size: 0.875rem;
   background-color: #f3f3f5;
-  color: #706f6f;
+  color: #051036;
   font-weight: 500;
 }
 
@@ -21,7 +21,7 @@
 
 .ct_contact p,
 .ct_currency p {
-  color: #706f6f;
+  color: #051036;
 }
 
 .email {
@@ -53,7 +53,7 @@
   align-items: center;
   padding: 1.5rem 3.125rem;
   background-color: #ffffff;
-  color: #706f6f;
+  color: #051036;
 }
 
 .ct_logo {
@@ -95,6 +95,6 @@
 
 .ct_login a {
   text-decoration: none;
-  color: #706f6f;
+  color: #051036;
   font-weight: 600;
 }

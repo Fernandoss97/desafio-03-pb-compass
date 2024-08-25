@@ -52,7 +52,7 @@
 
 .ct_location h2 {
   font-size: 1.125rem;
-  color: #000000;
+  color: #051036;
 }
 
 .ct_reviews {
@@ -105,4 +105,5 @@
 .ct_price span {
   font-family: "Kaushan Script";
   font-size: 1.25rem;
+  color: #051036;
 }

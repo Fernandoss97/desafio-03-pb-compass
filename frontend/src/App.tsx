@@ -9,19 +9,21 @@ import AverageReviews from "./components/averageReviews/AverageReviews";
 import ProgressBar from "./components/progressBar/ProgressBar";
 import Footer from "./components/footer/Footer";
 import Subtitle from "./components/subtitle/Subtitle";
+import SearchFilter from "./components/searchFilter/SearchFilter";
 
 function App() {
   return (
     <>
       <Header />
       <BannerGlobal title="Tour Package" />
-
       <div
         style={{
           display: "flex",
           justifyContent: "center",
         }}
-      ></div>
+      >
+        <SearchFilter />
+      </div>
     </>
   );
 }

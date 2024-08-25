@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #f7f8fa;
+  padding: 30px;
+  font-family: "Work Sans";
+}
+
+.container h3 {
+  color: #051036;
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+.ct_input {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 11px;
+  border-radius: 8px;
+  color: #a9afbb;
+  background-color: #ffffff;
+  height: 52px;
+}
+
+input {
+  border: none;
+  height: 100%;
+}
+
+input::placeholder {
+  color: #a9afbb;
+  font-family: "Work Sans";
+  font-size: 1rem;
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: #051036;
+}
