@@ -7,21 +7,20 @@ import TypeCard from "./components/typeCard/TypeCard";
 import DestCard from "./components/destCard/DestCard";
 import AverageReviews from "./components/averageReviews/AverageReviews";
 import ProgressBar from "./components/progressBar/ProgressBar";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
     <>
       <Header />
       <BannerGlobal title="Tour Package" />
+
       <div
         style={{
           display: "flex",
           justifyContent: "center",
-          padding: "50px",
         }}
-      >
-        <AverageReviews overallAverage={4} />
-      </div>
+      ></div>
     </>
   );
 }
