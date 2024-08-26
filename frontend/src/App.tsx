@@ -10,6 +10,7 @@ import ProgressBar from "./components/progressBar/ProgressBar";
 import Footer from "./components/footer/Footer";
 import Subtitle from "./components/subtitle/Subtitle";
 import SearchFilter from "./components/searchFilter/SearchFilter";
+import SliderFilter from "./components/sliderFilter/SliderFilter";
 
 function App() {
   return (
@@ -20,9 +21,10 @@ function App() {
         style={{
           display: "flex",
           justifyContent: "center",
+          padding: "50px",
         }}
       >
-        <SearchFilter />
+        <SliderFilter />
       </div>
     </>
   );
