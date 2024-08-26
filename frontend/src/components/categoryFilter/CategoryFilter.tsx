@@ -8,7 +8,6 @@ type CategoryFilterProps = {
 const CategoryFilter: React.FC<CategoryFilterProps> = ({ options }) => {
   const [selectedValue, setSelectedValue] = useState("");
 
-  console.log(selectedValue);
   return (
     <form className={styles.form}>
       <h3>Categories</h3>

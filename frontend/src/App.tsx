@@ -12,6 +12,7 @@ import Subtitle from "./components/subtitle/Subtitle";
 import SearchFilter from "./components/searchFilter/SearchFilter";
 import SliderFilter from "./components/sliderFilter/SliderFilter";
 import CategoryFilter from "./components/categoryFilter/CategoryFilter";
+import DestFilter from "./components/destFilter/DestFilter";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         {/* <CategoryFilter
           options={["teste", "Show", "Adventure", "Beach", "Food", "Honeymoon", "Hiking"]}
         /> */}
+        <DestFilter />
       </div>
     </>
   );

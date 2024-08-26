@@ -1,14 +1,12 @@
 import { Schema, Document } from "mongoose";
 
-export interface BookedTourType extends Document {
-  tour: Schema.Types.ObjectId;
-  user: Schema.Types.ObjectId;
-  travelers: number;
+export interface CountryType extends Document {
+  name: string;
+  cities: Schema.Types.ObjectId[];
 }
 
-export interface DestinationType extends Document {
-  city: string;
-  country: string;
+export interface CityType extends Document {
+  name: string;
   imageURL: string;
   travelers: number;
 }
@@ -37,7 +35,7 @@ export interface TourType extends Document {
   imageUrl: string;
   initialDate: string;
   finalDate: string;
-  destination: Schema.Types.ObjectId;
+  city: Schema.Types.ObjectId;
 }
 
 export interface iType extends Document {

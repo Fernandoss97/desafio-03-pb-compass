@@ -44,9 +44,9 @@ const tourSchema = new Schema<TourType>(
       type: String,
       required: true,
     },
-    destination: {
+    city: {
       type: Schema.Types.ObjectId,
-      ref: "Destination",
+      ref: "City",
       required: true,
     },
   },

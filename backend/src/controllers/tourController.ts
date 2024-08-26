@@ -11,7 +11,7 @@ export const createTour = (req: Request, res: Response) => {
     type,
     overview,
     imageUrl,
-    destination,
+    city,
     initialDate,
     finalDate,
   }: TourType = req.body;
@@ -28,7 +28,7 @@ export const createTour = (req: Request, res: Response) => {
     type,
     overview,
     imageUrl,
-    destination,
+    city,
     initialDate,
     finalDate,
   });
@@ -48,7 +48,7 @@ export const getTours = async (req: Request, res: Response) => {
   const limit = 9;
 
   await Tour.find()
-    .populate("type destination")
+    .populate("type city")
     .sort("-createdAt")
     .skip((page - 1) * limit)
     .limit(limit)
