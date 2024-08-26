@@ -11,6 +11,7 @@ import Footer from "./components/footer/Footer";
 import Subtitle from "./components/subtitle/Subtitle";
 import SearchFilter from "./components/searchFilter/SearchFilter";
 import SliderFilter from "./components/sliderFilter/SliderFilter";
+import CategoryFilter from "./components/categoryFilter/CategoryFilter";
 
 function App() {
   return (
@@ -24,7 +25,9 @@ function App() {
           padding: "50px",
         }}
       >
-        <SliderFilter />
+        {/* <CategoryFilter
+          options={["teste", "Show", "Adventure", "Beach", "Food", "Honeymoon", "Hiking"]}
+        /> */}
       </div>
     </>
   );
