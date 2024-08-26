@@ -15,6 +15,11 @@ const citySchema = new Schema<CityType>(
       type: Number,
       required: true,
     },
+    country: {
+      type: Schema.Types.ObjectId,
+      ref: "Country",
+      required: true,
+    },
   },
   { timestamps: true }
 );

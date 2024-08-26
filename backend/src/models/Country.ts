@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 import { CountryType } from "../types/types";
 
-const destinationSchema = new Schema<CountryType>(
+const countrySchema = new Schema<CountryType>(
   {
     name: {
       type: String,
@@ -16,4 +16,4 @@ const destinationSchema = new Schema<CountryType>(
   { timestamps: true }
 );
 
-export default mongoose.model<CountryType>("Destination", destinationSchema);
+export default mongoose.model<CountryType>("Country", countrySchema);

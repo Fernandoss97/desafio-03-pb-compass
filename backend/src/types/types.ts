@@ -5,10 +5,16 @@ export interface CountryType extends Document {
   cities: Schema.Types.ObjectId[];
 }
 
+export interface ContinentType extends Document {
+  name: string;
+  countries: Schema.Types.ObjectId[];
+}
+
 export interface CityType extends Document {
   name: string;
   imageURL: string;
   travelers: number;
+  country: Schema.Types.ObjectId;
 }
 
 export interface ReviewType extends Document {

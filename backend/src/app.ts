@@ -6,6 +6,7 @@ import tourRoutes from "./routes/tourRoutes";
 import typeRoutes from "./routes/typeRoutes";
 import countryRoutes from "./routes/countryRoutes";
 import cityRoutes from "./routes/cityRoutes";
+import continentRoutes from "./routes/continentRoutes";
 
 const app = express();
 
@@ -21,5 +22,6 @@ app.use(tourRoutes);
 app.use(typeRoutes);
 app.use(countryRoutes);
 app.use(cityRoutes);
+app.use(continentRoutes);
 
 export default app;

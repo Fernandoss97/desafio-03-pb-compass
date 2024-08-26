@@ -3,12 +3,13 @@ import { Request, Response } from "express";
 import { CityType } from "../types/types";
 
 export const createCity = (req: Request, res: Response) => {
-  const { name, imageURL, travelers }: CityType = req.body;
+  const { name, imageURL, travelers, country }: CityType = req.body;
 
   const newCity = new City({
     name,
     imageURL,
     travelers,
+    country,
   });
 
   newCity

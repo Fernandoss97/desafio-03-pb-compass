@@ -48,7 +48,8 @@ export const getTours = async (req: Request, res: Response) => {
   const limit = 9;
 
   await Tour.find()
-    .populate("type city")
+    .populate("type")
+    .populate({ path: "city", populate: { path: "country" } })
     .sort("-createdAt")
     .skip((page - 1) * limit)
     .limit(limit)
