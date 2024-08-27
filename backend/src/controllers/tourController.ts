@@ -77,7 +77,27 @@ export const getTourByID = async (req: Request, res: Response) => {
 export const getTotalByType = async (req: Request, res: Response) => {
   const typeID = req.params.typeID;
 
-  const typeTotalizer = await Tour.countDocuments({ type: typeID });
+  const tourTotalizer = await Tour.countDocuments({ type: typeID });
 
-  return res.status(200).json({ typeID, typeTotalizer });
+  return res.status(200).json({ typeID, tourTotalizer });
+};
+
+export const getCheaperTourByType = async (req: Request, res: Response) => {
+  const typeID = req.params.typeID;
+
+  const tours = await Tour.find({ type: typeID });
+
+  if (tours.length === 0) {
+    return res.status(404).json({ msg: `There are no tours for type ${typeID}` });
+  } else {
+    let cheaperTour = tours[0];
+
+    tours.forEach(t => {
+      if (t.from < cheaperTour.from) {
+        cheaperTour = t;
+      }
+    });
+
+    return res.status(200).json(cheaperTour);
+  }
 };
