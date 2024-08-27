@@ -13,6 +13,7 @@ import SearchFilter from "./components/searchFilter/SearchFilter";
 import SliderFilter from "./components/sliderFilter/SliderFilter";
 import CategoryFilter from "./components/categoryFilter/CategoryFilter";
 import DestFilter from "./components/destFilter/DestFilter";
+import ReviewFilter from "./components/reviewFilter/ReviewFilter";
 
 function App() {
   return (
@@ -29,7 +30,6 @@ function App() {
         {/* <CategoryFilter
           options={["teste", "Show", "Adventure", "Beach", "Food", "Honeymoon", "Hiking"]}
         /> */}
-        <TourCard />
       </div>
     </>
   );
