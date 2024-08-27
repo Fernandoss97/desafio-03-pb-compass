@@ -15,6 +15,7 @@ import CategoryFilter from "./components/categoryFilter/CategoryFilter";
 import DestFilter from "./components/destFilter/DestFilter";
 import ReviewFilter from "./components/reviewFilter/ReviewFilter";
 import BookSettings from "./components/bookSettings/BookSettings";
+import TourInfo from "./components/tourInfo/TourInfo";
 
 function App() {
   return (
