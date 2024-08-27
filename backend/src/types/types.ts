@@ -17,16 +17,30 @@ export interface CityType extends Document {
   country: Schema.Types.ObjectId;
 }
 
-export interface ReviewType extends Document {
-  user: Schema.Types.ObjectId;
-  tour: Schema.Types.ObjectId;
+export interface ScoreType extends Document {
   services: number;
   prices: number;
   locations: number;
   food: number;
   amenities: number;
   roomConfortAndQuality: number;
+}
+export interface CalculatedAverage {
+  tourID: string;
+  overallAverage: number;
+  services: number;
+  prices: number;
+  locations: number;
+  food: number;
+  amenities: number;
+  roomConfortAndQuality: number;
+}
+
+export interface ReviewType extends Document {
+  user: Schema.Types.ObjectId;
+  score: ScoreType;
   comment: string;
+  tour: Schema.Types.ObjectId;
 }
 
 export interface TourType extends Document {
@@ -36,7 +50,8 @@ export interface TourType extends Document {
   maxPeople: number;
   minAge: number;
   type: Schema.Types.ObjectId;
-  reviews: Schema.Types.ObjectId[];
+  reviews: ReviewType[];
+  score: ScoreType;
   overview: string;
   imageUrl: string;
   initialDate: string;

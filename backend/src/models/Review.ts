@@ -13,28 +13,8 @@ const reviewSchema = new Schema<ReviewType>(
       ref: "Tour",
       required: true,
     },
-    services: {
-      type: Number,
-      required: true,
-    },
-    prices: {
-      type: Number,
-      required: true,
-    },
-    locations: {
-      type: Number,
-      required: true,
-    },
-    food: {
-      type: Number,
-      required: true,
-    },
-    amenities: {
-      type: Number,
-      required: true,
-    },
-    roomConfortAndQuality: {
-      type: Number,
+    score: {
+      type: Object,
       required: true,
     },
     comment: {

@@ -29,6 +29,7 @@ function App() {
         {/* <CategoryFilter
           options={["teste", "Show", "Adventure", "Beach", "Food", "Honeymoon", "Hiking"]}
         /> */}
+        <TourCard />
       </div>
     </>
   );

@@ -49,6 +49,12 @@ const tourSchema = new Schema<TourType>(
       ref: "City",
       required: true,
     },
+    reviews: {
+      type: [Object],
+    },
+    score: {
+      type: Object,
+    },
   },
   { timestamps: true }
 );
