@@ -1,0 +1,91 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+  background-color: #f7f8fa;
+  font-family: "Work Sans";
+  width: 100%;
+}
+
+.container h2 {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #051036;
+}
+
+.ct_note {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ct_items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 45px;
+}
+
+.item p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #051036;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-top: 20px;
+}
+
+input,
+textarea {
+  border: solid 1px #d9d9d9;
+  padding: 15px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+textarea {
+  min-height: 120px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-family: "Work Sans";
+  color: #a9afbb;
+}
+
+.ct_name {
+  display: flex;
+  gap: 15px;
+}
+
+button {
+  padding: 11px 28px;
+  height: 42px;
+  border-radius: 8px;
+  background-color: #fc5056;
+  border: none;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: "Work Sans";
+  font-weight: 400;
+  width: fit-content;
+}
+
+button:hover {
+  background-color: #c94044;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+button:active {
+  transform: translateY(2px);
+}

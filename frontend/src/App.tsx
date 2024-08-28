@@ -17,6 +17,7 @@ import ReviewFilter from "./components/reviewFilter/ReviewFilter";
 import BookSettings from "./components/bookSettings/BookSettings";
 import TourInfo from "./components/tourInfo/TourInfo";
 import ReviewCard from "./components/reviewCard/ReviewCard";
+import AddReview from "./components/addReview/AddReview";
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
           padding: "50px",
         }}
       >
-        <ReviewCard />
+        <AddReview />
       </div>
     </>
   );
