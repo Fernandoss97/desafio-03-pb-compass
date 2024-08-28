@@ -78,6 +78,10 @@
   cursor: pointer;
 }
 
+a {
+  text-decoration: none;
+}
+
 .ct_menu li:hover {
   color: #fc5056;
 }
@@ -97,4 +101,12 @@
   text-decoration: none;
   color: #051036;
   font-weight: 600;
+}
+
+.active_link {
+  color: #fc5056;
+}
+
+.default_link {
+  color: inherit;
 }

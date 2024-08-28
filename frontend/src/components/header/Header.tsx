@@ -3,6 +3,7 @@ import { MdExpandMore } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { FiUser } from "react-icons/fi";
 import styles from "./header.module.css";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -32,9 +33,23 @@ const Header = () => {
             alt="Logo"
           />
           <ul className={styles.ct_menu}>
-            <li>Home</li>
+            <li>
+              <NavLink
+                className={({ isActive }) => (isActive ? styles.active_link : styles.default_link)}
+                to="/"
+              >
+                Home
+              </NavLink>
+            </li>
             <li>About</li>
-            <li>Tours</li>
+            <li>
+              <NavLink
+                className={({ isActive }) => (isActive ? styles.active_link : styles.default_link)}
+                to="/tour-package"
+              >
+                Tours
+              </NavLink>
+            </li>
             <li>Destination</li>
             <li>Blog</li>
             <li>Pages</li>
