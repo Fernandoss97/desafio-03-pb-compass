@@ -13,7 +13,7 @@ const DestFilter: React.FC<DestFilterProps> = ({ continents }) => {
     <form className={styles.form}>
       <h2>Destinations</h2>
       {continents.map(continent => (
-        <div key={continent._id}>
+        <div key={continent._id} className={styles.dest_info}>
           <h3>{continent.name}</h3>
           {continent.countries.map(country => (
             <label key={country._id} className={styles.label}>

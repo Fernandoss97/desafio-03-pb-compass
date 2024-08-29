@@ -127,8 +127,9 @@ a {
   background-color: #ffffff;
 }
 
-input {
+.ct_input input {
   border: none;
+  width: 100%;
 }
 
 input::placeholder {

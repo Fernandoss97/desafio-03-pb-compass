@@ -20,6 +20,12 @@
   font-weight: 500;
 }
 
+.dest_info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .label {
   display: flex;
   align-items: center;
@@ -27,6 +33,10 @@
   color: #676d85;
   font-size: 1rem;
   font-weight: 500;
+}
+
+.label p {
+  color: #676d85;
 }
 
 input {

@@ -23,7 +23,11 @@
   font-weight: 500;
 }
 
-input {
+.label p {
+  color: #676d85;
+}
+
+.input_radio {
   appearance: none;
   border-radius: 4px;
   width: 16px;

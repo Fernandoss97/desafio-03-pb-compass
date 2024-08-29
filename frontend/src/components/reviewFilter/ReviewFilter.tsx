@@ -9,6 +9,7 @@ const ReviewFilter = () => {
       <h3>Reviews</h3>
       <label className={styles.label}>
         <input
+          className={styles.input_radio}
           type="radio"
           value={5}
           checked={selectedValue === "5"}
@@ -18,6 +19,7 @@ const ReviewFilter = () => {
       </label>
       <label className={styles.label}>
         <input
+          className={styles.input_radio}
           type="radio"
           value={4}
           checked={selectedValue === "4"}
@@ -27,6 +29,7 @@ const ReviewFilter = () => {
       </label>
       <label className={styles.label}>
         <input
+          className={styles.input_radio}
           type="radio"
           value={3}
           checked={selectedValue === "3"}
@@ -36,6 +39,7 @@ const ReviewFilter = () => {
       </label>
       <label className={styles.label}>
         <input
+          className={styles.input_radio}
           type="radio"
           value={2}
           checked={selectedValue === "2"}
@@ -45,6 +49,7 @@ const ReviewFilter = () => {
       </label>
       <label className={styles.label}>
         <input
+          className={styles.input_radio}
           type="radio"
           value={1}
           checked={selectedValue === "1"}

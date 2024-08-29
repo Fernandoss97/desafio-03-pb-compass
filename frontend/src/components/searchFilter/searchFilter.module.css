@@ -25,9 +25,10 @@
   height: 52px;
 }
 
-input {
+.ct_input input {
   border: none;
   height: 100%;
+  width: 100%;
 }
 
 input::placeholder {

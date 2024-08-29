@@ -35,8 +35,9 @@
   font-size: 18px;
 }
 
-input {
+.ct_input input {
   border: none;
+  width: 100%;
 }
 
 input::placeholder {
