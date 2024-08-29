@@ -7,6 +7,10 @@ const TourCard = () => {
   return (
     <div className={styles.ct_card}>
       <div className={styles.ct_img}>
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/desafio-03-8b2a7.appspot.com/o/card-tour.jpg?alt=media&token=b20243a5-bd1a-40b6-b5c7-ddbb074e701a"
+          alt=""
+        />
         <div className={styles.ct_fav}>
           <MdFavoriteBorder />
         </div>
