@@ -13,6 +13,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ label, value }) => {
       <p>{label}</p>
       <div className={styles.ct_value}>
         <ProgressBarLib
+          labelColor="#051036"
           height="10px"
           completed={value}
           maxCompleted={5}

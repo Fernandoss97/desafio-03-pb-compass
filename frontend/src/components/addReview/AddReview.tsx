@@ -85,12 +85,14 @@ const AddReview = () => {
       <form className={styles.form}>
         <div className={styles.ct_name}>
           <input
+            className={styles.input_name}
             type="text"
             placeholder="Your Name"
             value={name}
             onChange={e => setName(e.target.value)}
           />
           <input
+            className={styles.input_email}
             type="email"
             placeholder="Email Adress"
             value={email}

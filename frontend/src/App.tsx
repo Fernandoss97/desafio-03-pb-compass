@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Tours from "./pages/tours/Tours";
+import TourDetails from "./pages/tourDetails/TourDetails";
 
 function App() {
   return (
@@ -10,6 +11,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/tour-package" element={<Tours />} />
+        {/* Adicionar rota dinâmica */}
+        <Route path="/tour-details" element={<TourDetails />} />
       </Routes>
     </div>
   );

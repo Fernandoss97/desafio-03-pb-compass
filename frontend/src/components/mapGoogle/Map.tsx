@@ -1,0 +1,54 @@
+import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+interface Position {
+  lat: number;
+  lng: number;
+}
+
+const Map = () => {
+  const [country, setCountry] = useState("brazil");
+  const [city, setCity] = useState("londrina");
+  const [position, setPosition] = useState<Position>();
+  const apiKey = "teste";
+
+  const { isLoaded } = useJsApiLoader({
+    id: "google-map-script",
+    googleMapsApiKey: apiKey,
+  });
+
+  const getPosition = async () => {
+    try {
+      const response = await axios.get(
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${city}&key=${apiKey}`
+      );
+      setPosition(response.data.results[0].geometry.location);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getPosition();
+  }, []);
+
+  console.log(position);
+  return (
+    <div>
+      {isLoaded ? (
+        <GoogleMap
+          mapContainerStyle={{ width: "60vw", height: "350px" }}
+          center={position}
+          zoom={11}
+        >
+          <Marker position={position!} />
+        </GoogleMap>
+      ) : (
+        <></>
+      )}
+    </div>
+  );
+};
+
+export default Map;

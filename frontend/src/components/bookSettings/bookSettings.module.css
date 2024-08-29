@@ -24,6 +24,7 @@
 
 .ct_price p {
   font-size: 1rem;
+  color: #051036;
 }
 
 .ct_time {
@@ -43,6 +44,7 @@
 
 .ct_label input {
   height: 40px;
+  width: 100%;
   padding: 10px;
   border-radius: 8px;
   border: solid 1px #d9d9d9;
@@ -72,6 +74,10 @@ option {
   border-bottom: solid 1px #d9d9d9;
 }
 
+.ct_ticket p {
+  color: #051036;
+}
+
 .title {
   font-size: 1.125rem;
   font-weight: 600;
@@ -84,7 +90,7 @@ option {
 }
 
 .ct_qtd p {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
 }
 
 .qtd_picker {
@@ -140,6 +146,7 @@ option {
 
 .ct_total p {
   font-size: 1rem;
+  color: #051036;
 }
 
 .ct_total span {
@@ -151,6 +158,7 @@ option {
 .bt_book {
   padding: 11px 28px;
   height: 42px;
+  width: 100%;
   border-radius: 8px;
   background-color: #fc5056;
   border: none;

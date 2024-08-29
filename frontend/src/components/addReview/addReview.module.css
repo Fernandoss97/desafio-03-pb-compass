@@ -9,8 +9,6 @@
 }
 
 .container h2 {
-  font-size: 1.125rem;
-  font-weight: bold;
   color: #051036;
 }
 
@@ -45,6 +43,11 @@ textarea {
   padding: 15px;
   border-radius: 8px;
   width: 100%;
+}
+
+.input_email,
+.input_name {
+  height: 50px;
 }
 
 textarea {
