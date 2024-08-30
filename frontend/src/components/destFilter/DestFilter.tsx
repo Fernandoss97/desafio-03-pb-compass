@@ -18,6 +18,7 @@ const DestFilter: React.FC<DestFilterProps> = ({ continents }) => {
           {continent.countries.map(country => (
             <label key={country._id} className={styles.label}>
               <input
+                className={styles.input}
                 type="radio"
                 value={country.name}
                 checked={selectedValue === country.name}

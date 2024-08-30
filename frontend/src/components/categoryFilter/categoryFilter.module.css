@@ -23,7 +23,7 @@
   font-weight: 500;
 }
 
-input {
+.input {
   appearance: none;
   border-radius: 4px;
   width: 16px;
@@ -33,7 +33,7 @@ input {
   cursor: pointer;
 }
 
-input:checked {
+.input:checked {
   background-color: #fc5056;
   border: 1px solid #fc5056;
   padding: 1px;

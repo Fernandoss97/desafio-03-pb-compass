@@ -37,7 +37,7 @@
   cursor: pointer;
 }
 
-input:checked {
+.input_radio:checked {
   background-color: #fc5056;
   border: 1px solid #fc5056;
   padding: 1px;

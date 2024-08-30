@@ -11,7 +11,7 @@ const SearchBar = () => {
         Destination
         <div className={styles.ct_input}>
           <IoPaperPlaneOutline className={styles.icons} />
-          <input type="text" id="dest" placeholder="Where to go?" />
+          <input className={styles.input} type="text" id="dest" placeholder="Where to go?" />
         </div>
       </label>
 
@@ -19,7 +19,7 @@ const SearchBar = () => {
         Type
         <div className={styles.ct_input}>
           <CiFlag1 className={styles.icons} />
-          <input type="text" id="actv" placeholder="Activity" />
+          <input className={styles.input} type="text" id="actv" placeholder="Activity" />
         </div>
       </label>
 
@@ -27,7 +27,7 @@ const SearchBar = () => {
         When
         <div className={styles.ct_input}>
           <CiCalendar className={styles.icons} />
-          <input type="date" id="date" placeholder="Date" />
+          <input className={styles.input} type="date" id="date" placeholder="Date" />
         </div>
       </label>
 
@@ -35,7 +35,7 @@ const SearchBar = () => {
         Guests
         <div className={styles.ct_input}>
           <LuUsers className={styles.icons} />
-          <input type="text" id="guests" placeholder="0" />
+          <input className={styles.input} type="text" id="guests" placeholder="0" />
         </div>
       </label>
       <button type="submit">Search</button>

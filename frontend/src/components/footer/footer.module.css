@@ -127,12 +127,12 @@ a {
   background-color: #ffffff;
 }
 
-.ct_input input {
+.ct_input .input {
   border: none;
-  width: 100%;
+  /* width: 100%; */
 }
 
-input::placeholder {
+.input::placeholder {
   color: #a9afbb;
   font-family: "Work Sans";
 }

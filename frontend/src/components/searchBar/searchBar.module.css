@@ -35,12 +35,12 @@
   font-size: 18px;
 }
 
-.ct_input input {
+.ct_input .input {
   border: none;
   width: 100%;
 }
 
-input::placeholder {
+.input::placeholder {
   color: #051036;
 }
 

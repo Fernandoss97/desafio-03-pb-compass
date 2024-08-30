@@ -65,7 +65,7 @@ const Footer = () => {
             <p>Sign up Newsletter</p>
             <div className={styles.ct_input}>
               <IoPaperPlaneOutline />
-              <input type="text" id="email" placeholder="Enter email..." />
+              <input className={styles.input} type="text" id="email" placeholder="Enter email..." />
             </div>
             <button>Submit</button>
           </div>

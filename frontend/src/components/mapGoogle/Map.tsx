@@ -11,11 +11,11 @@ const Map = () => {
   const [country, setCountry] = useState("brazil");
   const [city, setCity] = useState("londrina");
   const [position, setPosition] = useState<Position>();
-  const apiKey = "teste";
+  const apiKey = "AIzaSyCR2F9kmNteAKcnqhOby-FaZAglgwduhBM";
 
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: apiKey,
+    googleMapsApiKey: apiKey!,
   });
 
   const getPosition = async () => {
@@ -33,7 +33,6 @@ const Map = () => {
     getPosition();
   }, []);
 
-  console.log(position);
   return (
     <div>
       {isLoaded ? (

@@ -6,7 +6,7 @@ const SearchFilter = () => {
     <div className={styles.container}>
       <h3>Search</h3>
       <div className={styles.ct_input}>
-        <input type="text" placeholder="Type anything" />
+        <input className={styles.input} type="text" placeholder="Type anything" />
         <CiSearch className={styles.icon} />
       </div>
     </div>

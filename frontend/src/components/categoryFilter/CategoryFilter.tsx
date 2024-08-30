@@ -14,6 +14,7 @@ const CategoryFilter: React.FC<CategoryFilterProps> = ({ options }) => {
       {options.map(option => (
         <label key={option} className={styles.label}>
           <input
+            className={styles.input}
             type="radio"
             value={option}
             checked={selectedValue === option}
