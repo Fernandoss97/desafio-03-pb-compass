@@ -2,40 +2,63 @@ import styles from "./tourCard.module.css";
 import { MdFavoriteBorder } from "react-icons/md";
 import { FaStar } from "react-icons/fa";
 import { FaRegClock } from "react-icons/fa6";
+import { TourInterface } from "../types/Types";
+import React, { useEffect, useState } from "react";
+import axios, { isAxiosError, AxiosError } from "axios";
+import { AverageReviewInterface } from "../types/Types";
+import { baseURL } from "../../config/apiConfig";
 
-const TourCard = () => {
+type TourCardProps = {
+  tour: TourInterface;
+};
+
+const TourCard: React.FC<TourCardProps> = ({ tour }) => {
+  const [averageReview, setAverageReview] = useState<AverageReviewInterface>();
+
+  const fetchAverageReviews = async () => {
+    try {
+      const res = await axios.get(`${baseURL}/review/average/${tour._id}`);
+      setAverageReview(res.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchAverageReviews();
+  }, []);
+
   return (
     <div className={styles.ct_card}>
       <div className={styles.ct_img}>
-        <img
-          src="https://firebasestorage.googleapis.com/v0/b/desafio-03-8b2a7.appspot.com/o/card-tour.jpg?alt=media&token=b20243a5-bd1a-40b6-b5c7-ddbb074e701a"
-          alt=""
-        />
+        <img src={tour.city.imageURL} alt="" />
         <div className={styles.ct_fav}>
           <MdFavoriteBorder />
         </div>
       </div>
       <div className={styles.ct_info}>
         <div className={styles.ct_location}>
-          <p>Rio de Janeiro, Brazil </p>
-          <h2>Wonders of the West Coast & Kimberley</h2>
+          <p>
+            {tour.city.name}, {tour.city.country.name}{" "}
+          </p>
+          <h2>{tour.title}</h2>
         </div>
         <div className={styles.ct_reviews}>
           <div className={styles.ct_rv}>
             <div className={styles.ct_ReviewAverage}>
               <FaStar />
-              <span>4.8</span>
+              <span>{!averageReview ? 0 : averageReview.overallAverage}</span>
             </div>
-            <span className={styles.reviewsNum}>15 reviews</span>
+            <span className={styles.reviewsNum}>{tour.reviews.length} reviews</span>
           </div>
           <div className={styles.ct_duration}>
             <FaRegClock />
-            <span>7days</span>
+            <span>{tour.duration}days</span>
           </div>
         </div>
         <div className={styles.ct_price}>
           <p>Starting From</p>
-          <span>$520</span>
+          <span>${tour.from}</span>
         </div>
       </div>
     </div>

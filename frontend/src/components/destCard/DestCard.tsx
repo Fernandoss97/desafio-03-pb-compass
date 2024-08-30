@@ -1,15 +1,17 @@
 import styles from "./destCard.module.css";
+import { CityInterface } from "../types/Types";
 
-const DestCard = () => {
+type DestCardProps = {
+  city: CityInterface;
+};
+
+const DestCard = ({ city }: DestCardProps) => {
   return (
     <div className={styles.ct_card}>
-      <img
-        src="https://firebasestorage.googleapis.com/v0/b/desafio-03-8b2a7.appspot.com/o/dest-card.jpg?alt=media&token=41ced242-aba4-453a-bcbd-273100d60715"
-        alt=""
-      />
+      <img src={city.imageURL} alt={`${city.name} city image`} />
       <div className={styles.ct_info}>
-        <p>174,688 Travelers</p>
-        <h2>United Kingdom</h2>
+        <p>{city.travelers} Travelers</p>
+        <h2>{city.country.name}</h2>
       </div>
     </div>
   );

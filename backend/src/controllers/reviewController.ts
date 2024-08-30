@@ -64,7 +64,7 @@ export const getAverageReviewByTour = async (req: Request, res: Response) => {
 
   const reviews = await Review.find({ tour: tourID });
 
-  if (!reviews) {
+  if (reviews.length === 0) {
     return res.status(404).json({ msg: `There are no reviews for the tour ${tourID}` });
   } else {
     const average = calculateAverage(reviews);

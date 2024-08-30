@@ -7,6 +7,7 @@ import typeRoutes from "./routes/typeRoutes";
 import countryRoutes from "./routes/countryRoutes";
 import cityRoutes from "./routes/cityRoutes";
 import continentRoutes from "./routes/continentRoutes";
+import cors from "cors";
 
 const app = express();
 
@@ -16,6 +17,7 @@ db.once("open", () => {
 });
 
 app.use(express.json());
+app.use(cors());
 app.use(userRoutes);
 app.use(reviewRoutes);
 app.use(tourRoutes);

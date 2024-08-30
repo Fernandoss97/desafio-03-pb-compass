@@ -24,6 +24,7 @@ export const createCity = (req: Request, res: Response) => {
 
 export const getCities = async (req: Request, res: Response) => {
   await City.find()
+    .populate("country")
     .sort("-createdAt")
     .then(cities => {
       return res.status(200).json(cities);

@@ -11,8 +11,27 @@ import { FaSortAlphaDown } from "react-icons/fa";
 import Footer from "../../components/footer/Footer";
 import TourCard from "../../components/tourCard/TourCard";
 import Pagination from "@mui/material/Pagination";
+import axios from "axios";
+import { baseURL } from "../../config/apiConfig";
+import { TypeInterface } from "../../components/types/Types";
+import { useEffect, useState } from "react";
 
 const Tours = () => {
+  const [types, setTypes] = useState<TypeInterface[]>();
+
+  const fetchTypes = async () => {
+    try {
+      const res = await axios.get(`${baseURL}/types`);
+      setTypes(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchTypes();
+  }, []);
+
   return (
     <div>
       <Header />
@@ -26,45 +45,8 @@ const Tours = () => {
         <div className={styles.filters}>
           <SearchFilter />
           <SliderFilter />
-          <CategoryFilter options={["Adventure", "Beaches", "Food"]} />
-          <DestFilter
-            continents={[
-              {
-                "_id": "66ccce2409c07750d5289ed1",
-                "name": "South America2",
-                "countries": [
-                  {
-                    "_id": "66ccce1209c07750d5289ecf",
-                    "name": "Brazil2",
-                    "cities": ["66cccddf09c07750d5289ecd"],
-                    "createdAt": "2024-08-26T18:48:50.254Z",
-                    "updatedAt": "2024-08-26T18:48:50.254Z",
-                    "__v": 0,
-                  },
-                ],
-                "createdAt": "2024-08-26T18:49:08.488Z",
-                "updatedAt": "2024-08-26T18:49:08.488Z",
-                "__v": 0,
-              },
-              {
-                "_id": "66ccc9ad97297f1c414b7458",
-                "name": "South America",
-                "countries": [
-                  {
-                    "_id": "66ccc99097297f1c414b7454",
-                    "name": "Brazil",
-                    "cities": ["66ccb4a1cebca8c7537ce4ec"],
-                    "createdAt": "2024-08-26T18:29:36.184Z",
-                    "updatedAt": "2024-08-26T18:29:36.184Z",
-                    "__v": 0,
-                  },
-                ],
-                "createdAt": "2024-08-26T18:30:05.420Z",
-                "updatedAt": "2024-08-26T18:30:05.420Z",
-                "__v": 0,
-              },
-            ]}
-          />
+          <CategoryFilter options={types!} />
+          {/* <DestFilter/> */}
           <ReviewFilter />
         </div>
         <div className={styles.ct_tours}>
@@ -80,17 +62,7 @@ const Tours = () => {
               </select>
             </div>
           </div>
-          <div className={styles.ct_cards}>
-            <TourCard />
-            <TourCard />
-            <TourCard />
-            <TourCard />
-            <TourCard />
-            <TourCard />
-            <TourCard />
-            <TourCard />
-            <TourCard />
-          </div>
+          <div className={styles.ct_cards}>{/* <TourCard /> */}</div>
           <div className={styles.ct_pagination}>
             <Pagination count={10} variant="outlined" />
           </div>

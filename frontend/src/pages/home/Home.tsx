@@ -18,8 +18,19 @@ import { GiMountainClimbing } from "react-icons/gi";
 import { FaSwimmer } from "react-icons/fa";
 import { GiCycling } from "react-icons/gi";
 import Footer from "../../components/footer/Footer";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { TourInterface, CityInterface, TypeInterface } from "../../components/types/Types";
+import { baseURL } from "../../config/apiConfig";
 
 const Home = () => {
+  const [tours, setTours] = useState<TourInterface[]>();
+  const [cities, setCities] = useState<CityInterface[]>();
+  const [types, setTypes] = useState<TypeInterface[]>();
+
+  const mostPopularTours = tours?.slice(0, 8);
+  const topCities = cities?.slice(0, 8);
+
   const settingsTour = {
     dots: true,
     infinite: true,
@@ -37,6 +48,38 @@ const Home = () => {
     autoplay: true,
   };
 
+  const fetchTours = async () => {
+    try {
+      const res = await axios.get(`${baseURL}/tours?page=1`);
+      setTours(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const fetchCities = async () => {
+    try {
+      const res = await axios.get(`${baseURL}/cities`);
+      setCities(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const fetchTypes = async () => {
+    try {
+      const res = await axios.get(`${baseURL}/types`);
+      setTypes(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchTours();
+    fetchCities();
+    fetchTypes();
+  }, []);
+
   return (
     <div className={styles.container}>
       <Header />
@@ -50,30 +93,11 @@ const Home = () => {
         <Subtitle title="Most Popular Tours" subtitle="Tours" />
         <div className={styles.ct_slider}>
           <Slider {...settingsTour}>
-            <div>
-              <TourCard />
-            </div>
-            <div>
-              <TourCard />
-            </div>
-            <div>
-              <TourCard />
-            </div>
-            <div>
-              <TourCard />
-            </div>
-            <div>
-              <TourCard />
-            </div>
-            <div>
-              <TourCard />
-            </div>
-            <div>
-              <TourCard />
-            </div>
-            <div>
-              <TourCard />
-            </div>
+            {mostPopularTours?.map(tour => (
+              <div key={tour._id}>
+                <TourCard tour={tour} />
+              </div>
+            ))}
           </Slider>
         </div>
         <div className={styles.overall_data}>
@@ -98,14 +122,9 @@ const Home = () => {
       <section className={styles.top_dest}>
         <Subtitle subtitle="Destination" title="Top Attractions Destinations" />
         <div className={styles.ct_dest}>
-          <DestCard />
-          <DestCard />
-          <DestCard />
-          <DestCard />
-          <DestCard />
-          <DestCard />
-          <DestCard />
-          <DestCard />
+          {topCities?.map(city => (
+            <DestCard city={city} key={city._id} />
+          ))}
         </div>
       </section>
       <section className={styles.ct_contact}>
@@ -158,27 +177,11 @@ const Home = () => {
         <Subtitle subtitle="Browse By Category" title="Pick A Tour Type" />
         <div className={styles.ct_slider_type}>
           <Slider {...settingsType}>
-            <div>
-              <TypeCard />
-            </div>
-            <div>
-              <TypeCard />
-            </div>
-            <div>
-              <TypeCard />
-            </div>
-            <div>
-              <TypeCard />
-            </div>
-            <div>
-              <TypeCard />
-            </div>
-            <div>
-              <TypeCard />
-            </div>
-            <div>
-              <TypeCard />
-            </div>
+            {types?.map(type => (
+              <div key={type._id}>
+                <TypeCard type={type} />
+              </div>
+            ))}
           </Slider>
         </div>
       </section>
