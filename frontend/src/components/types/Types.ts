@@ -66,7 +66,7 @@ export interface ReviewInterface {
 export interface TourInterface {
   _id: string;
   title: string;
-  imageURL: string;
+  imageUrl: string;
   from: number;
   duration: number;
   maxPeople: number;
@@ -77,6 +77,7 @@ export interface TourInterface {
   finalDate: string;
   city: CityInterface;
   reviews: ReviewInterface[];
+  score: ScoreInterface;
   createdAt: string;
   updatedAt: string;
   __v: number;

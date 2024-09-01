@@ -3,11 +3,14 @@ import styles from "./sliderFilter.module.css";
 import Slider from "@mui/material/Slider";
 import { styled } from "@mui/material/styles";
 
-const SliderFilter = () => {
-  const [value, setValue] = useState<number>();
+type SliderFilterProps = {
+  priceFilter: number;
+  setPriceFilter: (value: number) => void;
+};
 
+const SliderFilter = ({ priceFilter, setPriceFilter }: SliderFilterProps) => {
   const handleChange = (event: Event, newValue: number | number[]) => {
-    setValue(newValue as number);
+    setPriceFilter(newValue as number);
   };
 
   const StyledSlider = styled(Slider)({
@@ -26,13 +29,13 @@ const SliderFilter = () => {
     <div className={styles.container}>
       <h3>Filter By</h3>
       <div className={styles.ct_slider}>
-        <StyledSlider max={150} value={value} color="secondary" onChange={handleChange} />
+        <StyledSlider max={1000} value={priceFilter} onChange={handleChange} color="secondary" />
       </div>
       <div className={styles.ct_price}>
-        <span>${value?.toFixed(2)}</span>
-        <p>$150.00</p>
+        <span>${priceFilter?.toFixed(2)}</span>
+        <p>$1.000</p>
       </div>
-      <button>Submit</button>
+      {/* <button>Submit</button> */}
     </div>
   );
 };

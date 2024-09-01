@@ -1,5 +1,21 @@
 import { Schema, Document } from "mongoose";
 
+export interface FilterType {
+  type?: string | null;
+}
+
+export interface FilterPrice {
+  from: number | null;
+}
+
+export interface FilterReview {
+  average: number | null;
+}
+
+export interface FilterCountryType {
+  country?: string | null;
+}
+
 export interface CountryType extends Document {
   name: string;
   cities: Schema.Types.ObjectId[];
@@ -50,6 +66,7 @@ export interface TourType extends Document {
   maxPeople: number;
   minAge: number;
   type: Schema.Types.ObjectId;
+  country: Schema.Types.ObjectId;
   reviews: ReviewType[];
   score: ScoreType;
   overview: string;

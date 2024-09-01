@@ -4,10 +4,12 @@ import { ContinentInterface } from "../types/Types";
 
 type DestFilterProps = {
   continents: ContinentInterface[];
+  countryFilter: string;
+  setCountryFilter: (value: string) => void;
 };
 
-const DestFilter: React.FC<DestFilterProps> = ({ continents }) => {
-  const [selectedValue, setSelectedValue] = useState("");
+const DestFilter = ({ continents, countryFilter, setCountryFilter }: DestFilterProps) => {
+  //const [selectedValue, setSelectedValue] = useState("");
 
   return (
     <form className={styles.form}>
@@ -21,8 +23,8 @@ const DestFilter: React.FC<DestFilterProps> = ({ continents }) => {
                 className={styles.input}
                 type="radio"
                 value={country.name}
-                checked={selectedValue === country.name}
-                onChange={e => setSelectedValue(e.target.value)}
+                checked={countryFilter === country.name}
+                onChange={e => setCountryFilter(e.target.value)}
               />
               <p>{country.name}</p>
             </label>

@@ -2,9 +2,9 @@
 
 .ct_card {
   max-width: 270px;
+  min-width: 270px;
   max-height: 400px;
   background-color: #f7f8fa;
-  cursor: pointer;
 }
 
 .ct_img {
@@ -13,6 +13,7 @@
   justify-content: end;
   padding: 10px;
   position: relative;
+  cursor: pointer;
 }
 
 .ct_img img {

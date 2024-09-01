@@ -49,6 +49,11 @@ const tourSchema = new Schema<TourType>(
       ref: "City",
       required: true,
     },
+    country: {
+      type: Schema.Types.ObjectId,
+      ref: "Country",
+      required: true,
+    },
     reviews: {
       type: [Object],
     },

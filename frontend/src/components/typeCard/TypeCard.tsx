@@ -13,7 +13,6 @@ type typeCardProps = {
 const TypeCard = ({ type }: typeCardProps) => {
   const [totalTours, setTotalTours] = useState(0);
   const [cheaperTour, setCheaperTour] = useState(0);
-  console.log(cheaperTour);
 
   const fetchTotalTours = async () => {
     try {

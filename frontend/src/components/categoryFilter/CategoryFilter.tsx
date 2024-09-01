@@ -4,10 +4,12 @@ import { useState } from "react";
 
 type CategoryFilterProps = {
   options: TypeInterface[];
+  categoryFilter: string;
+  setCategoryFilter: (value: string) => void;
 };
 
-const CategoryFilter = ({ options }: CategoryFilterProps) => {
-  const [selectedValue, setSelectedValue] = useState("");
+const CategoryFilter = ({ options, categoryFilter, setCategoryFilter }: CategoryFilterProps) => {
+  //const [selectedValue, setSelectedValue] = useState("");
 
   return (
     <form className={styles.form}>
@@ -18,8 +20,8 @@ const CategoryFilter = ({ options }: CategoryFilterProps) => {
             className={styles.input}
             type="radio"
             value={option.name}
-            checked={selectedValue === option.name}
-            onChange={e => setSelectedValue(e.target.value)}
+            checked={categoryFilter === option.name}
+            onChange={e => setCategoryFilter(e.target.value)}
           />
           {option.name}
         </label>

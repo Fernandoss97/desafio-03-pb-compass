@@ -12,7 +12,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/tour-package" element={<Tours />} />
         {/* Adicionar rota dinâmica */}
-        <Route path="/tour-details" element={<TourDetails />} />
+        <Route path="/tour-details/:tourID" element={<TourDetails />} />
       </Routes>
     </div>
   );

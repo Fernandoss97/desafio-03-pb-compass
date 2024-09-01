@@ -11,8 +11,18 @@ import { GrGallery } from "react-icons/gr";
 import TourCard from "../../components/tourCard/TourCard";
 import Footer from "../../components/footer/Footer";
 import Map from "../../components/mapGoogle/Map";
+import { baseURL } from "../../config/apiConfig";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { TourInterface } from "../../components/types/Types";
+import { useParams } from "react-router-dom";
+import ImgTour from "../../components/imgTour/ImgTour";
 
 const TourDetails = () => {
+  const [tour, setTour] = useState<TourInterface>();
+  const [tours, setTours] = useState<TourInterface[]>();
+  const { tourID } = useParams();
+
   const settingsTour = {
     dots: true,
     infinite: true,
@@ -22,31 +32,42 @@ const TourDetails = () => {
     autoplay: true,
   };
 
+  const fetchTours = async () => {
+    try {
+      const res = await axios.get(`${baseURL}/tours?page=1`);
+      setTours(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const fetchTour = async () => {
+    try {
+      const res = await axios.get(`${baseURL}/tour/${tourID}`);
+      setTour(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchTours();
+    fetchTour();
+  }, [tourID]);
+
+  if (!tour) {
+    return <div>Loadin component</div>;
+  }
   return (
     <div className={styles.container}>
       <Header />
       <div className={styles.main}>
         <div className={styles.tour_info}>
           <div className={styles.tour_data}>
-            <div className={styles.ct_img}>
-              <div className={styles.img_control}>
-                <div className={styles.ct_icon_control}>
-                  <span>Video</span>
-                  <AiOutlineVideoCamera className={styles.icon} />
-                </div>
-                <div className={styles.ct_icon_control}>
-                  <span>Gallery</span>
-                  <GrGallery className={styles.icon} />
-                </div>
-              </div>
-              <img
-                src="https://tripintercambios.com.br/wp-content/uploads/2023/07/maltatopo2.jpg"
-                alt=""
-              />
-            </div>
-            <TourInfo />
+            <ImgTour tour={tour!} />
+            <TourInfo tour={tour!} />
           </div>
-          <BookSettings />
+          <BookSettings tour={tour!} />
         </div>
         <div className={styles.overview}>
           <h2>Overview</h2>
@@ -64,7 +85,7 @@ const TourDetails = () => {
           <Map />
         </div>
         <div className={styles.ct_average}>
-          <AverageReviews overallAverage={4.8} />
+          <AverageReviews tour={tour} />
           <div className={styles.rv_card}>
             <h2>Showing 1 Review</h2>
             <ReviewCard />
@@ -74,18 +95,11 @@ const TourDetails = () => {
         <div className={styles.ct_slider}>
           <h1>You may also like...</h1>
           <Slider {...settingsTour}>
-            <div>
-              <TourCard />
-            </div>
-            <div>
-              <TourCard />
-            </div>
-            <div>
-              <TourCard />
-            </div>
-            <div>
-              <TourCard />
-            </div>
+            {tours?.map(tour => (
+              <div key={tour._id}>
+                <TourCard tour={tour} />
+              </div>
+            ))}
           </Slider>
         </div>
       </div>

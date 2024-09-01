@@ -1,7 +1,12 @@
 import styles from "./bookSettings.module.css";
 import { useState } from "react";
+import { TourInterface } from "../types/Types";
 
-const BookSettings = () => {
+type BookSettingsProps = {
+  tour: TourInterface;
+};
+
+const BookSettings = ({ tour }: BookSettingsProps) => {
   let [adults, setAdults] = useState(0);
   let [kids, setKids] = useState(0);
   let [children, setChildren] = useState(0);
@@ -9,7 +14,7 @@ const BookSettings = () => {
   return (
     <div className={styles.container}>
       <div className={styles.ct_price}>
-        <span>$104</span>
+        <span>${tour.from}</span>
         <p>/ per person</p>
       </div>
       <div className={styles.ct_time}>

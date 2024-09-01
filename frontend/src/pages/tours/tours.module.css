@@ -43,6 +43,21 @@
   color: #676d85;
 }
 
+.ct_clean_filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon_clean {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.icon_clean:hover {
+  color: #fc5056;
+}
+
 .ct_tours_top_sort {
   display: flex;
   align-items: center;

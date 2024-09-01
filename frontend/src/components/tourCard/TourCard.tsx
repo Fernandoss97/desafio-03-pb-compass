@@ -7,6 +7,7 @@ import React, { useEffect, useState } from "react";
 import axios, { isAxiosError, AxiosError } from "axios";
 import { AverageReviewInterface } from "../types/Types";
 import { baseURL } from "../../config/apiConfig";
+import { Link } from "react-router-dom";
 
 type TourCardProps = {
   tour: TourInterface;
@@ -30,12 +31,14 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
 
   return (
     <div className={styles.ct_card}>
-      <div className={styles.ct_img}>
-        <img src={tour.city.imageURL} alt="" />
-        <div className={styles.ct_fav}>
-          <MdFavoriteBorder />
+      <Link to={`/tour-details/${tour._id}`}>
+        <div className={styles.ct_img}>
+          <img src={tour.city.imageURL} alt="" />
+          <div className={styles.ct_fav}>
+            <MdFavoriteBorder />
+          </div>
         </div>
-      </div>
+      </Link>
       <div className={styles.ct_info}>
         <div className={styles.ct_location}>
           <p>

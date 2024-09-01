@@ -1,6 +1,17 @@
 import Tour from "../models/Tour";
+import Type from "../models/Type";
+import City from "../models/City";
+import Country from "../models/Country";
 import { Request, Response } from "express";
-import { TourType } from "../types/types";
+import {
+  TourType,
+  FilterType,
+  iType,
+  CountryType,
+  FilterCountryType,
+  FilterPrice,
+  FilterReview,
+} from "../types/types";
 
 export const createTour = (req: Request, res: Response) => {
   const {
@@ -14,6 +25,7 @@ export const createTour = (req: Request, res: Response) => {
     city,
     initialDate,
     finalDate,
+    country,
   }: TourType = req.body;
 
   const iDate = new Date(initialDate);
@@ -29,6 +41,7 @@ export const createTour = (req: Request, res: Response) => {
     overview,
     imageUrl,
     city,
+    country,
     initialDate,
     finalDate,
   });
@@ -44,33 +57,87 @@ export const createTour = (req: Request, res: Response) => {
 };
 
 export const getTours = async (req: Request, res: Response) => {
+  const { type, country, from, review, search } = req.query;
   const page = parseInt(req.query.page as string) || 0;
   const limit = 9;
 
-  await Tour.find()
-    .populate("type")
-    .populate({ path: "city", populate: { path: "country" } })
-    .sort("-createdAt")
-    .skip((page - 1) * limit)
-    .limit(limit)
-    .then(tours => {
-      return res.status(200).json(tours);
+  type QueryType = {
+    $and: [] | undefined;
+  };
+
+  let filterType: FilterType = { type: null };
+  let filterCountry: FilterCountryType = { country: null };
+  let filterPrice: FilterPrice = { from: null };
+  let filterReview: FilterReview = { average: null };
+
+  let $and: any = [{ from: { $gte: 0 } }];
+
+  if (type) {
+    const typeFilter: iType | null = await Type.findOne({ name: type });
+    filterType.type = typeFilter?._id as string;
+    $and.push({ type: filterType.type });
+  }
+
+  if (country) {
+    const countryFilter: CountryType | null = await Country.findOne({ name: country });
+    filterCountry.country = countryFilter?._id as string;
+    $and.push({ country: filterCountry.country });
+  }
+
+  if (from) {
+    filterPrice.from = parseInt(from as string) || 0;
+    $and.push({ from: { $lte: filterPrice.from } });
+  }
+
+  if (review) {
+    filterReview.average = parseInt(review as string) || 0;
+    $and.push({ "score.overallAverage": { $gte: filterReview.average } });
+  }
+
+  if (search) {
+    $and.push({ title: { $regex: search, $options: "i" } });
+  }
+
+  if (page === 0) {
+    await Tour.find()
+      .populate("type")
+      .populate({ path: "city", populate: { path: "country" } })
+      .sort("-createdAt")
+      .then(tours => {
+        return res.status(200).json(tours);
+      })
+      .catch(err => {
+        return res.status(500).json({ msg: `Fail to get tours - ${err}` });
+      });
+  } else {
+    await Tour.find({
+      $and,
     })
-    .catch(err => {
-      return res.status(500).json({ msg: `Fail to get tours - ${err}` });
-    });
+      .populate("type")
+      .populate({ path: "city", populate: { path: "country" } })
+      .sort("-createdAt")
+      .skip((page - 1) * limit)
+      .limit(limit)
+      .then(tours => {
+        return res.status(200).json(tours);
+      })
+      .catch(err => {
+        return res.status(500).json({ msg: `Fail to get tours - ${err}` });
+      });
+  }
 };
 
 export const getTourByID = async (req: Request, res: Response) => {
   const tourID = req.params.tourID;
 
   await Tour.findOne({ _id: tourID })
-    .populate("type destination")
+    .populate("type")
+    .populate({ path: "city", populate: { path: "country" } })
     .then(tour => {
       return res.status(200).json(tour);
     })
     .catch(err => {
-      return res.status(500).json({ msg: "Fail to get tour" });
+      return res.status(500).json({ msg: `Fail to get tour - ${err}` });
     });
 };
 
