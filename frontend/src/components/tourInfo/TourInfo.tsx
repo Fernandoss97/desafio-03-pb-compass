@@ -51,8 +51,8 @@ const TourInfo = ({ tour }: TourInfoProps) => {
           <p>Reviews</p>
           <div className={styles.ct_rev_data}>
             <IoIosStar className={styles.star_icon} />
-            <span>4.8</span>
-            <p>(15 reviews)</p>
+            <span>{tour.score.overallAverage.toFixed(1)}</span>
+            <p>({tour.reviews.length} reviews)</p>
           </div>
         </div>
       </div>

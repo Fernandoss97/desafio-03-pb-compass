@@ -8,6 +8,14 @@ const reviewSchema = new Schema<ReviewType>(
       ref: "User",
       required: true,
     },
+    name: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+    },
     tour: {
       type: Schema.Types.ObjectId,
       ref: "Tour",

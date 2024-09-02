@@ -1,6 +1,7 @@
 import styles from "./bookSettings.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TourInterface } from "../types/Types";
+import { randomFill } from "crypto";
 
 type BookSettingsProps = {
   tour: TourInterface;
@@ -8,8 +9,38 @@ type BookSettingsProps = {
 
 const BookSettings = ({ tour }: BookSettingsProps) => {
   let [adults, setAdults] = useState(0);
+  let [sumAdults, setSumAdults] = useState(0);
   let [kids, setKids] = useState(0);
+  let [sumKids, setSumKids] = useState(0);
   let [children, setChildren] = useState(0);
+  let [sumChildren, setSumChildren] = useState(0);
+  //let [total, setTotal] = useState(0);
+
+  let total = sumAdults + sumKids + sumChildren;
+
+  const calculateTotal = () => {
+    if (adults > 0) {
+      setSumAdults(tour.from * adults);
+    } else {
+      setSumAdults(0);
+    }
+
+    if (kids > 0) {
+      setSumKids(tour.from * kids);
+    } else {
+      setSumKids(0);
+    }
+
+    if (children > 0) {
+      setSumChildren(tour.from * children);
+    } else {
+      setSumChildren(0);
+    }
+  };
+
+  useEffect(() => {
+    calculateTotal();
+  }, [adults, kids, children]);
 
   return (
     <div className={styles.container}>
@@ -81,7 +112,7 @@ const BookSettings = ({ tour }: BookSettingsProps) => {
       </div>
       <div className={styles.ct_total}>
         <p>Total</p>
-        <span>$104</span>
+        <span>${total}</span>
       </div>
       <button className={styles.bt_book}>Book Now</button>
     </div>

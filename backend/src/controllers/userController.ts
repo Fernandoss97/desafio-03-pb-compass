@@ -27,11 +27,7 @@ export const getUserByFirebaseID = async (req: Request, res: Response) => {
 
   const user = await User.findOne({ firebaseID: firebaseID });
 
-  if (!user) {
-    return res.status(404).json({ msg: `User ${firebaseID} not found` });
-  } else {
-    return res.status(200).json(user);
-  }
+  return res.status(200).json(user);
 };
 
 export const getUsers = async (req: Request, res: Response) => {

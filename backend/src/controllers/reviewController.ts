@@ -5,16 +5,21 @@ import { ReviewType } from "../types/types";
 import { calculateAverage } from "../helpers/calculateAverageReview";
 
 export const createReview = async (req: Request, res: Response) => {
-  const { user, tour, score, comment }: ReviewType = req.body;
+  const { user, tour, score, comment, name, email }: ReviewType = req.body;
 
   const newReview = new Review({
     tour,
     user,
     score,
     comment,
+    name,
+    email,
   });
 
   try {
+    const updatedReview = calculateAverage([newReview]);
+    newReview.score.overallAverage = updatedReview.overallAverage;
+
     const tourDB = await Tour.findById(tour);
 
     if (!tourDB) {
@@ -80,6 +85,14 @@ export const getAverageReviewByTour = async (req: Request, res: Response) => {
       roomConfortAndQuality: average.roomConfortAndQuality.toFixed(1),
     });
   }
+};
+
+export const getReviewsByTour = async (req: Request, res: Response) => {
+  const tourID = req.params.tourID;
+
+  const reviews = await Review.find({ tour: tourID }).populate("user");
+
+  return res.status(200).json(reviews);
 };
 
 export const getTotalizerByTour = async (req: Request, res: Response) => {

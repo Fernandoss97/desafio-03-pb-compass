@@ -4,8 +4,22 @@ import { CiSearch } from "react-icons/ci";
 import { FiUser } from "react-icons/fi";
 import styles from "./header.module.css";
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../../contexts/authContext/Index";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase/firebase";
 
 const Header = () => {
+  const { currentUser } = useAuth();
+
+  const handleLogin = () => {
+    window.location.href = "/login";
+  };
+
+  const handleLogout = () => {
+    signOut(auth);
+    window.location.href = "/";
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.ct_top}>
@@ -59,7 +73,10 @@ const Header = () => {
         <div className={styles.ct_login}>
           <CiSearch className={styles.search_icon} />
           <FiUser className={styles.user_icon} />
-          <a href="#">Login / Signup</a>
+          <div className={styles.ct_login}>
+            {!currentUser && <span onClick={handleLogin}>Login</span>}
+            {currentUser && <span onClick={handleLogout}>Logout</span>}
+          </div>
         </div>
       </nav>
     </header>

@@ -1,8 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./addReview.module.css";
 import Rating from "@mui/material/Rating";
+import { TourInterface, UserInterface } from "../types/Types";
+import axios from "axios";
+import { baseURL } from "../../config/apiConfig";
+import { currentUserType, useAuth } from "../../contexts/authContext/Index";
+import Checkbox from "@mui/material/Checkbox";
 
-const AddReview = () => {
+type AddReviewProps = {
+  tour: TourInterface;
+  newReview: boolean;
+  setNewReview: (value: boolean) => void;
+};
+
+const AddReview = ({ tour, newReview, setNewReview }: AddReviewProps) => {
   const [services, setServices] = useState<number>(1);
   const [locations, setLocations] = useState<number>(1);
   const [amenities, setAmenities] = useState<number>(1);
@@ -12,6 +23,64 @@ const AddReview = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
+  const [user, setUser] = useState<UserInterface>();
+  const [isAnonymous, setIsAnonymous] = useState(false);
+  const { currentUser } = useAuth();
+
+  const score = {
+    services,
+    prices,
+    locations,
+    food,
+    amenities,
+    roomConfortAndQuality: room,
+  };
+
+  const handleChangeAnonymous = (event: any) => {
+    setIsAnonymous(event.target.checked);
+  };
+
+  const cleanFields = () => {
+    setAmenities(1);
+    setFood(1);
+    setLocations(1);
+    setPrices(1);
+    setRoom(1);
+    setServices(1);
+    setComment("");
+    setEmail("");
+    setName("");
+  };
+
+  const postReview = async () => {
+    try {
+      const res = await axios.post(`${baseURL}/review/create`, {
+        user: user?._id,
+        name: isAnonymous ? "Anonymous" : name,
+        email: email,
+        tour: tour._id,
+        score: score,
+        comment: comment,
+      });
+      cleanFields();
+      setNewReview(!newReview);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const fetchUser = async () => {
+    try {
+      const res = await axios.get(`${baseURL}/user/${currentUser?.uid}`);
+      setUser(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchUser();
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -82,10 +151,20 @@ const AddReview = () => {
           </div>
         </div>
       </div>
+
       <form className={styles.form}>
+        <div className={styles.ct_checkbox}>
+          <Checkbox
+            checked={isAnonymous}
+            onChange={handleChangeAnonymous}
+            inputProps={{ "aria-label": "controlled" }}
+          />
+          <span>is anonymous?</span>
+        </div>
         <div className={styles.ct_name}>
           <input
             className={styles.input_name}
+            disabled={isAnonymous ? true : false}
             type="text"
             placeholder="Your Name"
             value={name}
@@ -106,8 +185,12 @@ const AddReview = () => {
         ></textarea>
       </form>
       <button
-        disabled={email.length === 0 || name.length === 0 || comment.length === 0 ? true : false}
-        type="submit"
+        onClick={postReview}
+        disabled={
+          (email.length === 0 || name.length === 0 || comment.length === 0) && isAnonymous === false
+            ? true
+            : false
+        }
       >
         Submit Review
       </button>

@@ -97,8 +97,8 @@ a {
   font-size: 1.5rem;
 }
 
-.ct_login a {
-  text-decoration: none;
+.ct_login span {
+  cursor: pointer;
   color: #051036;
   font-weight: 600;
 }

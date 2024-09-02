@@ -52,9 +52,21 @@ export interface ScoreInterface {
   comment: string;
 }
 
+export interface UserInterface {
+  _id: string;
+  name: string;
+  email: string;
+  firebaseID: string;
+  updatedAt: string;
+  createdAt: string;
+  __v: number;
+}
+
 export interface ReviewInterface {
   _id: string;
-  user: string;
+  user: UserInterface;
+  name: string;
+  email: string;
   tour: string;
   score: ScoreInterface;
   comment: string;

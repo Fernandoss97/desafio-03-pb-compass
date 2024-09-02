@@ -14,20 +14,20 @@ type TourCardProps = {
 };
 
 const TourCard: React.FC<TourCardProps> = ({ tour }) => {
-  const [averageReview, setAverageReview] = useState<AverageReviewInterface>();
+  //const [averageReview, setAverageReview] = useState<AverageReviewInterface>();
 
-  const fetchAverageReviews = async () => {
-    try {
-      const res = await axios.get(`${baseURL}/review/average/${tour._id}`);
-      setAverageReview(res.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  // const fetchAverageReviews = async () => {
+  //   try {
+  //     const res = await axios.get(`${baseURL}/review/average/${tour._id}`);
+  //     setAverageReview(res.data);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchAverageReviews();
-  }, []);
+  // useEffect(() => {
+  //   fetchAverageReviews();
+  // }, []);
 
   return (
     <div className={styles.ct_card}>
@@ -50,7 +50,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
           <div className={styles.ct_rv}>
             <div className={styles.ct_ReviewAverage}>
               <FaStar />
-              <span>{!averageReview ? 0 : averageReview.overallAverage}</span>
+              <span>{tour.score.overallAverage.toFixed(1)}</span>
             </div>
             <span className={styles.reviewsNum}>{tour.reviews.length} reviews</span>
           </div>

@@ -40,6 +40,7 @@ export interface ScoreType extends Document {
   food: number;
   amenities: number;
   roomConfortAndQuality: number;
+  overallAverage: number;
 }
 export interface CalculatedAverage {
   tourID: string;
@@ -54,6 +55,8 @@ export interface CalculatedAverage {
 
 export interface ReviewType extends Document {
   user: Schema.Types.ObjectId;
+  name: string;
+  email: string;
   score: ScoreType;
   comment: string;
   tour: Schema.Types.ObjectId;

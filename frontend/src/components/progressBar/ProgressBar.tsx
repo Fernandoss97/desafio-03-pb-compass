@@ -22,7 +22,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ label, value }) => {
           isLabelVisible={false}
           className="wrapper"
           bgColor="#fc5056"
-          width="200px"
+          width="12vw"
         />
         <span>{value.toFixed(1)}</span>
       </div>
