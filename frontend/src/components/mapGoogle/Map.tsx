@@ -2,6 +2,7 @@ import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { TourInterface } from "../types/Types";
+import styles from "./map.module.css";
 
 interface Position {
   lat: number;
@@ -37,7 +38,8 @@ const Map = ({ tour }: MapProps) => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.ct_map}>
+      <h2>Map</h2>
       {isLoaded ? (
         <GoogleMap
           mapContainerStyle={{ width: "60vw", height: "350px" }}
