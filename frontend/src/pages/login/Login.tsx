@@ -9,7 +9,7 @@ import {
   loginWithFacebook,
 } from "../../firebase/auth";
 import { useAuth } from "../../contexts/authContext/Index";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import Slider from "react-slick";
 
 const Login = () => {
@@ -19,7 +19,6 @@ const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [isSingIn, setIsSingIn] = useState(false);
   const [isRegistering, setIsRegistering] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
 
   const handleLoginFb = async () => {
     if (!isSingIn) {
@@ -70,7 +69,7 @@ const Login = () => {
       <div className={styles.ct_content}>
         <div className={styles.content}>
           <div className={styles.ct_header}>
-            {isLogin ? <h1>Sing In</h1> : <h1>Sign Up</h1>}
+            {isLogin ? <h1>Sign In</h1> : <h1>Sign Up</h1>}
             <p>Please enter your email and password</p>
           </div>
           <form className={styles.form}>
@@ -137,7 +136,6 @@ const Login = () => {
           )}
         </div>
         <div className={styles.ct_slider}>
-          {/* <div className={styles.ct_blur}></div> */}
           <Slider {...settingsSlider} arrows={false}>
             <div className={styles.box_slider}>
               <div className={styles.box_info}>
@@ -145,7 +143,7 @@ const Login = () => {
                 <h2>Brazil</h2>
               </div>
               <img
-                src="https://images.pexels.com/photos/3607628/pexels-photo-3607628.jpeg?auto=compress&cs=tinysrgb&w=600"
+                src="https://firebasestorage.googleapis.com/v0/b/desafio-03-8b2a7.appspot.com/o/pexels-silvia-trigo-545701-3607628.jpg?alt=media&token=bee1a4bb-d82f-45f5-8094-56b552d7c2e4"
                 alt="Christ the Redeemer"
               />
             </div>
@@ -155,8 +153,8 @@ const Login = () => {
                 <h2>Peru</h2>
               </div>
               <img
-                src="https://images.pexels.com/photos/6448057/pexels-photo-6448057.jpeg?auto=compress&cs=tinysrgb&w=600"
-                alt=""
+                src="https://firebasestorage.googleapis.com/v0/b/desafio-03-8b2a7.appspot.com/o/pexels-wim-van-den-brande-14125175-6448057.jpg?alt=media&token=b37319ce-dfd9-4654-b412-11c9c59cb450"
+                alt="Machu Picchu"
               />
             </div>
             <div className={styles.box_slider}>
@@ -165,7 +163,7 @@ const Login = () => {
                 <h2>Mexico</h2>
               </div>
               <img
-                src="https://images.pexels.com/photos/3290068/pexels-photo-3290068.jpeg?auto=compress&cs=tinysrgb&w=600"
+                src="https://firebasestorage.googleapis.com/v0/b/desafio-03-8b2a7.appspot.com/o/pexels-alexazabache-3290068.jpg?alt=media&token=128bf339-9586-409f-a639-be431625fcaf"
                 alt="Chichén Itzá"
               />
             </div>
@@ -175,7 +173,7 @@ const Login = () => {
                 <h2>Italy</h2>
               </div>
               <img
-                src="https://images.pexels.com/photos/2225439/pexels-photo-2225439.jpeg?auto=compress&cs=tinysrgb&w=600"
+                src="https://firebasestorage.googleapis.com/v0/b/desafio-03-8b2a7.appspot.com/o/pexels-mark-neal-201020-2225439.jpg?alt=media&token=8cbb0ef1-852c-484e-b813-e2e9347bcd48"
                 alt="Coliseum"
               />
             </div>
@@ -185,8 +183,8 @@ const Login = () => {
                 <h2>Jordan</h2>
               </div>
               <img
-                src="https://images.pexels.com/photos/18717558/pexels-photo-18717558/free-photo-of-rock-carved-building-of-the-treasury-in-petra-jordan.jpeg?auto=compress&cs=tinysrgb&w=600"
-                alt=""
+                src="https://firebasestorage.googleapis.com/v0/b/desafio-03-8b2a7.appspot.com/o/pexels-axp-photography-500641970-18717558.jpg?alt=media&token=8863c001-288f-44a3-b412-503fdeb699f7"
+                alt="Ruins of Petra"
               />
             </div>
             <div className={styles.box_slider}>
@@ -195,7 +193,7 @@ const Login = () => {
                 <h2>India</h2>
               </div>
               <img
-                src="https://images.pexels.com/photos/7263897/pexels-photo-7263897.jpeg?auto=compress&cs=tinysrgb&w=600"
+                src="https://firebasestorage.googleapis.com/v0/b/desafio-03-8b2a7.appspot.com/o/pexels-rachel-claire-7263897.jpg?alt=media&token=e5811549-2733-4990-89ff-ae8930a4b004"
                 alt="Taj Mahal"
               />
             </div>
@@ -205,7 +203,7 @@ const Login = () => {
                 <h2>China</h2>
               </div>
               <img
-                src="https://images.pexels.com/photos/10952316/pexels-photo-10952316.jpeg?auto=compress&cs=tinysrgb&w=600"
+                src="https://firebasestorage.googleapis.com/v0/b/desafio-03-8b2a7.appspot.com/o/pexels-artem-korsakov-132129914-10952316.jpg?alt=media&token=986fb824-20bf-4d3e-a8d0-ba040e3d702a"
                 alt="Great Wall"
               />
             </div>

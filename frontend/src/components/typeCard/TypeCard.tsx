@@ -1,5 +1,5 @@
 import styles from "./typeCard.module.css";
-import { GiRollingSuitcase } from "react-icons/gi";
+
 import { BsSuitcase } from "react-icons/bs";
 import { TypeInterface } from "../types/Types";
 import { useEffect, useState } from "react";

@@ -1,8 +1,7 @@
-import ProgressBarLib from "@ramonak/react-progress-bar";
 import styles from "./averageReviews.module.css";
 import { FaStar } from "react-icons/fa";
 import ProgressBar from "../progressBar/ProgressBar";
-import { useState } from "react";
+
 import { TourInterface } from "../types/Types";
 
 interface AverageReviewsProps {
@@ -10,16 +9,6 @@ interface AverageReviewsProps {
 }
 
 const AverageReviews = ({ tour }: AverageReviewsProps) => {
-  const [tag, setTag] = useState("Excellent");
-
-  // if (overallAverage <= 1) {
-  //   setTag("Bad");
-  // } else if (overallAverage > 1 && overallAverage <= 3) {
-  //   setTag("Good");
-  // } else if (overallAverage > 3 && overallAverage <= 5) {
-  //   setTag("Excellent");
-  // }
-
   return (
     <div className={styles.container}>
       <h2>Average Reviews</h2>
@@ -28,7 +17,7 @@ const AverageReviews = ({ tour }: AverageReviewsProps) => {
           <span>{tour.score.overallAverage.toFixed(1)}</span>
           <div className={styles.ct_tag}>
             <FaStar />
-            <p>{tag}</p>
+            <p>{tour.score.overallAverage <= 4 ? "Good" : "Excellent"}</p>
           </div>
         </div>
         <div className={styles.ct_average}>

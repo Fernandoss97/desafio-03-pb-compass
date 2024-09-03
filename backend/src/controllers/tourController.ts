@@ -1,6 +1,5 @@
 import Tour from "../models/Tour";
 import Type from "../models/Type";
-import City from "../models/City";
 import Country from "../models/Country";
 import { Request, Response } from "express";
 import {
@@ -61,15 +60,10 @@ export const getTours = async (req: Request, res: Response) => {
   const page = parseInt(req.query.page as string) || 0;
   const limit = 9;
 
-  type QueryType = {
-    $and: [] | undefined;
-  };
-
   let filterType: FilterType = { type: null };
   let filterCountry: FilterCountryType = { country: null };
   let filterPrice: FilterPrice = { from: null };
   let filterReview: FilterReview = { average: null };
-  //let filterWhen: FilterReview = { average: null };
 
   let $and: any = [{ from: { $gte: 0 } }];
 

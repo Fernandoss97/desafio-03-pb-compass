@@ -11,10 +11,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 45px;
+  padding: 10px;
   border-radius: 50%;
   height: fit-content;
-  background-color: #d9d9d9;
+  background-color: #f7f8fa;
+}
+
+.icon_user {
+  font-size: 52px;
 }
 
 .ct_info {

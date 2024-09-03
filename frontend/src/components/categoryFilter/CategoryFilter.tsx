@@ -1,6 +1,5 @@
 import styles from "./categoryFilter.module.css";
 import { TypeInterface } from "../types/Types";
-import { useState } from "react";
 
 type CategoryFilterProps = {
   options: TypeInterface[];
@@ -9,8 +8,6 @@ type CategoryFilterProps = {
 };
 
 const CategoryFilter = ({ options, categoryFilter, setCategoryFilter }: CategoryFilterProps) => {
-  //const [selectedValue, setSelectedValue] = useState("");
-
   return (
     <form className={styles.form}>
       <h3>Categories</h3>

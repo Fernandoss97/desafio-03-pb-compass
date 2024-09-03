@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styles from "./sliderFilter.module.css";
 import Slider from "@mui/material/Slider";
 import { styled } from "@mui/material/styles";
@@ -35,7 +34,6 @@ const SliderFilter = ({ priceFilter, setPriceFilter }: SliderFilterProps) => {
         <span>${priceFilter?.toFixed(2)}</span>
         <p>$1.000</p>
       </div>
-      {/* <button>Submit</button> */}
     </div>
   );
 };

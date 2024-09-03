@@ -29,7 +29,7 @@ const Tours = () => {
   const [priceFilter, setpriceFilter] = useState(0);
   const [searchFilter, setSearchFilter] = useState("");
   const [pageNumber, setPageNumber] = useState(1);
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -101,7 +101,6 @@ const Tours = () => {
       queryParams.set("type", filterValue);
       navigate({ search: queryParams.toString() });
     } else {
-      //queryParams.delete("type");
       navigate({ search: queryParams.toString() });
     }
     window.scroll({ top: 400, behavior: "smooth" });
@@ -112,7 +111,6 @@ const Tours = () => {
       queryParams.set("country", filterValue);
       navigate({ search: queryParams.toString() });
     } else {
-      //queryParams.delete("country");
       navigate({ search: queryParams.toString() });
     }
     window.scroll({ top: 400, behavior: "smooth" });
@@ -227,9 +225,9 @@ const Tours = () => {
               <p>Sort by</p>
               <FaSortAlphaDown />
               <select className={styles.select_sort}>
-                <option value="">Teste</option>
-                <option value="">Teste</option>
-                <option value="">Teste</option>
+                <option value="">Title</option>
+                <option value="">Destination</option>
+                <option value="">Review</option>
               </select>
             </div>
           </div>

@@ -80,7 +80,11 @@ const Footer = () => {
                 placeholder="Enter email..."
               />
             </div>
-            <button className={styles.bt_sub_email} disabled={regexTest ? false : true}>
+            <button
+              onClick={() => setEmail("")}
+              className={styles.bt_sub_email}
+              disabled={regexTest ? false : true}
+            >
               Submit
             </button>
           </div>

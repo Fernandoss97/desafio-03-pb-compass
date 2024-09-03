@@ -1,10 +1,11 @@
-import { ReviewInterface, TourInterface } from "../types/Types";
+import { ReviewInterface } from "../types/Types";
 import styles from "./reviewCard.module.css";
 import { FaStar } from "react-icons/fa";
 import moment from "moment";
 import axios from "axios";
 import { baseURL } from "../../config/apiConfig";
 import { useEffect, useState } from "react";
+import { FaUser } from "react-icons/fa";
 
 type ReviewCardProps = {
   review: ReviewInterface;
@@ -32,10 +33,11 @@ const ReviewCard = ({ review }: ReviewCardProps) => {
     fetchTotalReviews();
   }, []);
 
-  // console.log(review.score.overallAverage);
   return (
     <div className={styles.container}>
-      <div className={styles.ct_img}></div>
+      <div className={styles.ct_img}>
+        <FaUser className={styles.icon_user} />
+      </div>
       <div className={styles.ct_info}>
         <p className={styles.date}>{formatedDate}</p>
         <h2>{!review.name ? "Anonymous" : review.name}</h2>

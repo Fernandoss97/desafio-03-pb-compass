@@ -1,7 +1,6 @@
 import styles from "./bookSettings.module.css";
 import { useEffect, useState } from "react";
 import { TourInterface } from "../types/Types";
-import { randomFill } from "crypto";
 
 type BookSettingsProps = {
   tour: TourInterface;
@@ -14,7 +13,6 @@ const BookSettings = ({ tour }: BookSettingsProps) => {
   let [sumKids, setSumKids] = useState(0);
   let [children, setChildren] = useState(0);
   let [sumChildren, setSumChildren] = useState(0);
-  //let [total, setTotal] = useState(0);
 
   let total = sumAdults + sumKids + sumChildren;
 
@@ -56,9 +54,9 @@ const BookSettings = ({ tour }: BookSettingsProps) => {
         <label className={styles.ct_label}>
           Time
           <select id="">
-            <option value="teste">Teste</option>
-            <option value="teste">Teste</option>
-            <option value="teste">Teste</option>
+            <option value="teste">Time 1</option>
+            <option value="teste">Time 2</option>
+            <option value="teste">Time 3</option>
           </select>
         </label>
       </div>

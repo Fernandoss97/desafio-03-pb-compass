@@ -3,10 +3,7 @@ import { MdFavoriteBorder } from "react-icons/md";
 import { FaStar } from "react-icons/fa";
 import { FaRegClock } from "react-icons/fa6";
 import { TourInterface } from "../types/Types";
-import React, { useEffect, useState } from "react";
-import axios, { isAxiosError, AxiosError } from "axios";
-import { AverageReviewInterface } from "../types/Types";
-import { baseURL } from "../../config/apiConfig";
+import React from "react";
 import { Link } from "react-router-dom";
 import Skeleton from "@mui/material/Skeleton";
 

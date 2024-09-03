@@ -4,7 +4,7 @@ import { CiFlag1 } from "react-icons/ci";
 import { CiCalendar } from "react-icons/ci";
 import { LuUsers } from "react-icons/lu";
 import { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
   const [dest, setDest] = useState("");
@@ -21,8 +21,6 @@ const SearchBar = () => {
     queryParams.set("country", dest);
     queryParams.set("when", when);
     queryParams.set("guests", guests);
-
-    console.log(queryParams);
 
     navigate(`/tour-package?${queryParams}`);
   };

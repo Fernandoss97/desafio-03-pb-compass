@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import styles from "./destFilter.module.css";
 import { ContinentInterface } from "../types/Types";
 
@@ -9,8 +8,6 @@ type DestFilterProps = {
 };
 
 const DestFilter = ({ continents, countryFilter, setCountryFilter }: DestFilterProps) => {
-  //const [selectedValue, setSelectedValue] = useState("");
-
   return (
     <form className={styles.form}>
       <h2>Destinations</h2>

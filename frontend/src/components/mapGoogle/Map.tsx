@@ -13,8 +13,6 @@ type MapProps = {
 };
 
 const Map = ({ tour }: MapProps) => {
-  const [country, setCountry] = useState("brazil");
-  //const [city, setCity] = useState("londrina");
   const [position, setPosition] = useState<Position>();
   const apiKey = "AIzaSyCR2F9kmNteAKcnqhOby-FaZAglgwduhBM";
 

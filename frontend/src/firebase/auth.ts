@@ -32,7 +32,6 @@ export const loginWithGoogle = async () => {
   } catch (error) {
     console.log(error);
   }
-  //result.user
 };
 
 export const signOut = () => {
