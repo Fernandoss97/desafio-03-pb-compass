@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 1.563rem 1.5rem;
+  margin-inline: 80px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-family: "Kaushan Script";
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #051036;
+}
+
+.ct_input {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: solid 1px #a9afbb;
+  padding: 11px;
+  border-radius: 8px;
+  color: #051036;
+}
+
+.icons {
+  font-size: 18px;
+}
+
+.ct_input .input {
+  border: none;
+  width: 100%;
+  padding: 5px;
+  outline: none;
+}
+
+.input::placeholder {
+  color: #051036;
+}
+
+.form button {
+  padding: 11px 28px;
+  height: 42px;
+  border-radius: 8px;
+  background-color: #fc5056;
+  border: none;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background-color: #c94044;
+}

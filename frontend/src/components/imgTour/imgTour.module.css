@@ -1,0 +1,38 @@
+.ct_img {
+  position: relative;
+}
+
+.img_control {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.tour_data img {
+  max-width: 60vw;
+}
+
+.img_control {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.ct_icon_control {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: "Work Sans";
+  padding: 5px 8px;
+  background-color: #f7f8fa;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ct_icon_control span {
+  font-size: 1rem;
+}
+
+.ct_icon_control:hover {
+  background-color: #a9afbb;
+}

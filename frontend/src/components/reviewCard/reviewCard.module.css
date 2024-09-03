@@ -1,0 +1,64 @@
+.container {
+  display: flex;
+  gap: 15px;
+  padding: 30px;
+  border: solid 1px #d9d9d9;
+
+  font-family: "Work Sans";
+}
+
+.ct_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 50%;
+  height: fit-content;
+  background-color: #f7f8fa;
+}
+
+.icon_user {
+  font-size: 52px;
+}
+
+.ct_info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.date {
+  font-size: 0.875rem;
+  color: #676d85;
+}
+
+.ct_info h2 {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #051036;
+}
+
+.ct_rv {
+  display: flex;
+  gap: 7px;
+}
+
+.ct_ReviewAverage {
+  background-color: #fc5056;
+  color: #ffffff;
+  display: flex;
+  padding: 4px;
+  border-radius: 4px;
+  font-size: 12px;
+  display: flex;
+  gap: 2px;
+}
+
+.reviewsNum {
+  color: #676d85;
+}
+
+.comment {
+  font-size: 1rem;
+  color: #676d85;
+}

@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.ct_sub {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ct_sub h3 {
+  font-family: "Kaushan Script";
+  font-size: 1.5rem;
+  color: #fc5056;
+  font-weight: 400;
+}
+
+.left_detail,
+.right_detail {
+  width: 100px;
+  height: 1px;
+  background-color: #c2c7cf;
+}
+
+.container h2 {
+  font-family: "Work Sans";
+  font-size: 2.188rem;
+  font-weight: 700;
+  color: #051036;
+}

@@ -1,0 +1,113 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: "Work Sans";
+  width: 100%;
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: #051036;
+}
+
+.ct_top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ct_loc {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.875rem;
+}
+
+.ct_loc p {
+  color: #676d85;
+}
+
+.ct_loc span {
+  color: #fc5056;
+  cursor: pointer;
+}
+
+.ct_icons {
+  display: flex;
+  gap: 15px;
+}
+
+.container h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #051036;
+}
+
+.ct_data {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-top: solid 1px #d9d9d9;
+}
+
+.ct_from {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ct_from p {
+  font-size: 1rem;
+  color: #676d85;
+}
+
+.ct_from span {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fc5056;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.data p {
+  font-size: 1rem;
+  color: #676d85;
+}
+
+.data span {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #051036;
+}
+
+.ct_rev {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ct_rev p {
+  font-size: 1rem;
+  color: #676d85;
+}
+
+.ct_rev_data {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ct_rev_data span {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #051036;
+}
+
+.star_icon {
+  font-size: 0.85rem;
+  color: #fc5056;
+}

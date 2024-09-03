@@ -1,0 +1,122 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding: 50px 80px;
+  background-color: #ffffff;
+  margin-bottom: 70px;
+}
+
+.tour_info {
+  display: flex;
+  gap: 20px;
+}
+
+.tour_data {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ct_img {
+  position: relative;
+}
+
+.img_control {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.tour_data img {
+  max-width: 60vw;
+}
+
+.img_control {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.ct_icon_control {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: "Work Sans";
+  padding: 5px 8px;
+  background-color: #f7f8fa;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ct_icon_control span {
+  font-size: 1rem;
+}
+
+.ct_icon_control:hover {
+  background-color: #a9afbb;
+}
+
+.overview {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 60vw;
+}
+
+.overview h2 {
+  font-family: "Work Sans";
+  color: #051036;
+}
+
+.overview p {
+  color: #878c95;
+}
+
+.ct_average {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  max-width: 60vw;
+}
+
+.rv_card {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.rv_card h2 {
+  font-family: "Work Sans";
+  color: #051036;
+}
+
+.ct_slider {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.ct_slider h1 {
+  font-family: "Work Sans";
+  color: #051036;
+  text-align: center;
+}
+
+.ct_loading {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.loading_info {
+  display: flex;
+  gap: 10px;
+  padding-inline: 80px;
+}
+
+.loading_info_img {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}

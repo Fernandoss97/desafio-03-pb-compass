@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+
+.ct_banner {
+  align-items: center;
+  text-align: center;
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/desafio-03-8b2a7.appspot.com/o/banner-home.jpg?alt=media&token=0e57386a-f845-4c24-86d6-333258e461a8);
+  background-size: cover;
+  background-position: bottom;
+}
+
+.ct_txt {
+  display: flex;
+  flex-direction: column;
+  padding-block: 180px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ct_txt h2 {
+  font-family: "Kaushan Script";
+  font-size: 1.75rem;
+  color: #fc5056;
+}
+
+.ct_txt h1,
+p {
+  font-family: "Work Sans";
+  color: #ffffff;
+}
+
+.ct_txt h1 {
+  font-size: 3.125rem;
+  font-weight: 700;
+}
+
+.ct_txt p {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.test {
+  color: #fc5056;
+}

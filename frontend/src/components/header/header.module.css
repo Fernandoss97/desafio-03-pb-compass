@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+.header {
+  font-family: "Work Sans";
+}
+
+.ct_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 3.125rem;
+  font-size: 0.875rem;
+  background-color: #f3f3f5;
+  color: #051036;
+  font-weight: 500;
+}
+
+.ct_contact {
+  display: flex;
+}
+
+.ct_contact p,
+.ct_currency p {
+  color: #051036;
+}
+
+.email {
+  border-left: solid 2px;
+  padding-left: 10px;
+  margin-left: 10px;
+}
+
+.ct_right {
+  display: flex;
+}
+
+.ct_social {
+  display: flex;
+  gap: 15px;
+  margin-right: 10px;
+  border-right: solid 2px;
+  padding-right: 10px;
+}
+
+.ct_currency {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3.125rem;
+  background-color: #ffffff;
+  color: #051036;
+}
+
+.ct_logo {
+  display: flex;
+  gap: 4.375rem;
+  align-items: center;
+}
+
+.ct_logo img {
+  height: 1.938rem;
+  width: 6.875rem;
+}
+
+.ct_menu {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+  font-weight: 500;
+}
+
+.ct_menu li {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+.ct_menu li:hover {
+  color: #fc5056;
+}
+
+.ct_login {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search_icon,
+.user_icon {
+  font-size: 1.5rem;
+}
+
+.ct_login span {
+  cursor: pointer;
+  color: #051036;
+  font-weight: 600;
+}
+
+.active_link {
+  color: #fc5056;
+}
+
+.default_link {
+  color: inherit;
+}

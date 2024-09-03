@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.container h2 {
+  color: #051036;
+  font-family: "Work Sans";
+}
+
+.ct {
+  display: flex;
+  background-color: #f7f8fa;
+  padding: 30px;
+}
+
+.ct_overall {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  background-color: #fc5056;
+  color: #ffffff;
+  padding: 53px 45px;
+  font-family: "Work Sans";
+}
+
+.ct_overall span {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.ct_tag {
+  display: flex;
+  gap: 5px;
+}
+
+.ct_tag p {
+  font-weight: 400;
+}
+
+.ct_average {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto);
+  padding-left: 32px;
+  padding-block: 20px;
+  gap: 30px;
+  color: #051036;
+}
