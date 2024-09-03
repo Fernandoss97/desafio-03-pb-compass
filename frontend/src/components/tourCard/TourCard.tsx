@@ -8,27 +8,31 @@ import axios, { isAxiosError, AxiosError } from "axios";
 import { AverageReviewInterface } from "../types/Types";
 import { baseURL } from "../../config/apiConfig";
 import { Link } from "react-router-dom";
+import Skeleton from "@mui/material/Skeleton";
 
 type TourCardProps = {
   tour: TourInterface;
 };
 
 const TourCard: React.FC<TourCardProps> = ({ tour }) => {
-  //const [averageReview, setAverageReview] = useState<AverageReviewInterface>();
-
-  // const fetchAverageReviews = async () => {
-  //   try {
-  //     const res = await axios.get(`${baseURL}/review/average/${tour._id}`);
-  //     setAverageReview(res.data);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchAverageReviews();
-  // }, []);
-
+  if (!tour) {
+    return (
+      <div className={styles.ct_loading}>
+        <Skeleton
+          animation="wave"
+          sx={{ bgcolor: "#d9d9d9" }}
+          variant="rectangular"
+          width={270}
+          height={220}
+        />
+        <Skeleton variant="text" sx={{ fontSize: "14px" }} />
+        <Skeleton variant="text" sx={{ fontSize: "14px" }} />
+        <Skeleton variant="text" sx={{ fontSize: "18px" }} />
+        <Skeleton variant="rectangular" width={270} height={40} />
+        <Skeleton variant="rectangular" width={270} height={60} />
+      </div>
+    );
+  }
   return (
     <div className={styles.ct_card}>
       <Link to={`/tour-details/${tour._id}`}>
@@ -56,7 +60,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
           </div>
           <div className={styles.ct_duration}>
             <FaRegClock />
-            <span>{tour.duration}days</span>
+            <span>{tour.duration.toFixed()}days</span>
           </div>
         </div>
         <div className={styles.ct_price}>

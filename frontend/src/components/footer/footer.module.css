@@ -129,6 +129,8 @@ a {
 
 .ct_input .input {
   border: none;
+  height: 100%;
+  padding: 5px;
   /* width: 100%; */
 }
 
@@ -164,4 +166,9 @@ button:hover {
 .ct_border {
   height: 5px;
   background-color: #fc5056;
+}
+
+.bt_sub_email:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }

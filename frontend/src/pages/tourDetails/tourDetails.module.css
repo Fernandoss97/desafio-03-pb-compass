@@ -103,3 +103,21 @@
   color: #051036;
   text-align: center;
 }
+
+.ct_loading {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.loading_info {
+  display: flex;
+  gap: 10px;
+  padding-inline: 80px;
+}
+
+.loading_info_img {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}

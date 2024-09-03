@@ -16,6 +16,7 @@ import { ReviewInterface, TourInterface } from "../../components/types/Types";
 import { useParams } from "react-router-dom";
 import ImgTour from "../../components/imgTour/ImgTour";
 import { useAuth } from "../../contexts/authContext/Index";
+import { Skeleton } from "@mui/material";
 
 const TourDetails = () => {
   const [tour, setTour] = useState<TourInterface>();
@@ -24,8 +25,6 @@ const TourDetails = () => {
   const [newReview, setNewReview] = useState(false);
   const { tourID } = useParams();
   const { currentUser } = useAuth();
-
-  console.log(currentUser);
 
   const settingsTour = {
     dots: true,
@@ -93,7 +92,42 @@ const TourDetails = () => {
   }, [tourID, newReview]);
 
   if (!tour) {
-    return <div>Loadin component</div>;
+    return (
+      <div className={styles.ct_loading}>
+        <Skeleton
+          animation="wave"
+          sx={{ bgcolor: "#d9d9d9" }}
+          variant="rectangular"
+          width="100%"
+          height={111}
+        />
+        <div className={styles.loading_info}>
+          <div className={styles.loading_info_img}>
+            <Skeleton
+              animation="wave"
+              sx={{ bgcolor: "#d9d9d9" }}
+              variant="rectangular"
+              width="60vw"
+              height={300}
+            />
+            <Skeleton
+              animation="wave"
+              sx={{ bgcolor: "#d9d9d9" }}
+              variant="rectangular"
+              width="60vw"
+              height={170}
+            />
+          </div>
+          <Skeleton
+            animation="wave"
+            sx={{ bgcolor: "#d9d9d9" }}
+            variant="rectangular"
+            width="25vw"
+            height={500}
+          />
+        </div>
+      </div>
+    );
   }
   return (
     <div className={styles.container}>

@@ -57,7 +57,7 @@ export const createTour = (req: Request, res: Response) => {
 };
 
 export const getTours = async (req: Request, res: Response) => {
-  const { type, country, from, review, search } = req.query;
+  const { type, country, from, review, search, when, guests } = req.query;
   const page = parseInt(req.query.page as string) || 0;
   const limit = 9;
 
@@ -69,6 +69,7 @@ export const getTours = async (req: Request, res: Response) => {
   let filterCountry: FilterCountryType = { country: null };
   let filterPrice: FilterPrice = { from: null };
   let filterReview: FilterReview = { average: null };
+  //let filterWhen: FilterReview = { average: null };
 
   let $and: any = [{ from: { $gte: 0 } }];
 
@@ -96,6 +97,16 @@ export const getTours = async (req: Request, res: Response) => {
 
   if (search) {
     $and.push({ title: { $regex: search, $options: "i" } });
+  }
+
+  if (when) {
+    const parseDate = new Date(when as string);
+    $and.push({ initialDate: { $gte: parseDate.toISOString() } });
+  }
+
+  if (guests) {
+    const parseNumber = parseInt(guests as string);
+    $and.push({ maxPeople: { $lte: parseNumber } });
   }
 
   if (page === 0) {

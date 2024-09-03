@@ -36,10 +36,10 @@ const Tours = () => {
   const queryParams = new URLSearchParams(location.search);
   let ToursURL = `${baseURL}/tours/?page=${pageNumber}`;
 
-  if (categoryFilter.length > 0) {
+  if (categoryFilter.length > 0 || searchParams.get("type")) {
     ToursURL = ToursURL + `&type=${searchParams.get("type")?.split(" ").join("+")}`;
   }
-  if (countryFilter.length > 0) {
+  if (countryFilter.length > 0 || searchParams.get("country")) {
     ToursURL = ToursURL + `&country=${searchParams.get("country")?.split(" ").join("+")}`;
   }
   if (reviewFilter.length > 0) {
@@ -101,7 +101,7 @@ const Tours = () => {
       queryParams.set("type", filterValue);
       navigate({ search: queryParams.toString() });
     } else {
-      queryParams.delete("type");
+      //queryParams.delete("type");
       navigate({ search: queryParams.toString() });
     }
     window.scroll({ top: 400, behavior: "smooth" });
@@ -112,7 +112,7 @@ const Tours = () => {
       queryParams.set("country", filterValue);
       navigate({ search: queryParams.toString() });
     } else {
-      queryParams.delete("country");
+      //queryParams.delete("country");
       navigate({ search: queryParams.toString() });
     }
     window.scroll({ top: 400, behavior: "smooth" });
@@ -155,6 +155,10 @@ const Tours = () => {
     setReviewFilter("");
     setSearchFilter("");
     setpriceFilter(0);
+    queryParams.delete("type");
+    queryParams.delete("country");
+
+    navigate({ search: queryParams.toString() });
   };
 
   useEffect(() => {

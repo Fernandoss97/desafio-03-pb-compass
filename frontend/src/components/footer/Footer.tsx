@@ -4,8 +4,14 @@ import { FaTwitter } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { IoPaperPlaneOutline } from "react-icons/io5";
 import { FaRegCopyright } from "react-icons/fa";
+import { useState } from "react";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const emailRegex = /\w+@\w+\.\w+/;
+
+  let regexTest = emailRegex.test(email);
+
   return (
     <footer className={styles.footer}>
       <div className={styles.content}>
@@ -65,9 +71,18 @@ const Footer = () => {
             <p>Sign up Newsletter</p>
             <div className={styles.ct_input}>
               <IoPaperPlaneOutline />
-              <input className={styles.input} type="text" id="email" placeholder="Enter email..." />
+              <input
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                className={styles.input}
+                type="text"
+                id="email"
+                placeholder="Enter email..."
+              />
             </div>
-            <button>Submit</button>
+            <button className={styles.bt_sub_email} disabled={regexTest ? false : true}>
+              Submit
+            </button>
           </div>
           <div className={styles.ct_copyright}>
             <FaRegCopyright />
